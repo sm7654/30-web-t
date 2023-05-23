@@ -293,9 +293,10 @@ nav {
     transition: all 0.2s ease-in-out;
     background: transparent;
     backdrop-filter: brightness(65%);
+    -webkit-backdrop-filter: brightness(65%);
 }
 .Up_coming_item:hover::after {
-    backdrop-filter: brightness(40%);
+    -webkit-backdrop-filter: brightness(40%);
 }
 
 @media only screen and (max-width: 960px) {

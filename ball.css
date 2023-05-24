@@ -43,7 +43,7 @@ header {
     background-color: white;
     box-shadow: 0px -3px 12px darkgray;
     z-index: 99;
-    opacity: 0.95;
+    transition: all 0.35s ease-in-out;
 }
 nav {
     width: 93%;
@@ -51,6 +51,29 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.bars-wraper {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 20px;
+    cursor: pointer;
+    display: none;
+    pointer-events: none;
+}
+.bars {
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background-color: #f45029;
+}
+#bar_2 {
+    width: 75%;
+    align-self: flex-end;
+}
+#bar_3 {
+    width: 50%;
+    align-self: flex-end;
 }
 .ul_header {
     height: 100%;
@@ -255,7 +278,7 @@ nav {
 }
 .Up_coming_item > h1 {
     font-size: 25px;
-    z-index: 99;
+    z-index: 2;
     color: white;
     text-align: left;
     padding-left: 10%;
@@ -285,11 +308,6 @@ nav {
     backdrop-filter: brightness(40%);
 }
 @media only screen and (max-width: 900px) {
-    .products_section {
-        gap: 30px;
-    }
-}
-@media only screen and (max-width: 800px) {
     .text_banner_section {
         text-align: center;
         align-items: center;
@@ -315,6 +333,14 @@ nav {
     }
     .product_price {
         font-size: 9px;
+    }
+    .ul_header {
+        display: none;
+        pointer-events: none;
+    }
+    .bars-wraper {
+        display: flex;
+        pointer-events: all;
     }
 }
 @media only screen and (max-width: 600px) {

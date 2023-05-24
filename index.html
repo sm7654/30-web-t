@@ -27,11 +27,6 @@
     </header>
     <div style="width: 100%; height: 60px;"></div>
     <section class="banner">
-        <div class="changed_images_banner_section">
-            <div class="images_box">
-                <img src="./images/basketballs/1.png" alt="" id="imges">
-            </div>
-        </div>
         <div class="text_banner_section">
             <h1>
                 TAKE YOUR SKILLS TO THE SKY<span style="color: #f45029;">.</span>
@@ -238,26 +233,6 @@
         let i = 0;
         let a = 0;
         const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
-        const img_basketballs = document.getElementById("imges");
-        const links = [
-            "./images/basketballs/1.png",
-            "./images/basketballs/5.png",
-            "./images/basketballs/7.png"
-        ];
-        
-        function auto() {
-            img_basketballs.classList.add("hidden");
-            setTimeout(() => {
-                if (i === 0) {
-                    i = links.length - 1;
-                } else {
-                    i -= 1;
-                }
-                img_basketballs.src = links[i];
-                img_basketballs.classList.remove("hidden");
-            }, 500);
-        }
-        setInterval(auto, 3000);
 
 
         function hover_product(Id, basketball_name) {

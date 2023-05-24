@@ -43,6 +43,7 @@ header {
     background-color: white;
     box-shadow: 0px -3px 12px darkgray;
     z-index: 99;
+    opacity: 0.95;
 }
 nav {
     width: 93%;
@@ -117,46 +118,32 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 50px 0%;
-    background: #ededed;
+    padding: 100px 10%;
+    background: url(./images/backgrounds/chosen-one.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
 }
-.images_box::before {
-    content: 'SALE 25%';
-    padding: 10px;
-    border-radius: 7px;
-    background: #f45029;
-    color: whitesmoke;
-    font-weight: 500;
+.banner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
     position: absolute;
-    font-size: 16px;
-    top: 10px;
-    left: 10px;
-}
-.changed_images_banner_section {
-    width: 40%;
-    height: 80%;
-    position: relative; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-evenly; 
-    gap: 15px;
-}
-.images_box {
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    display: grid;
-    place-items: center;
-    position: relative;
+    background: transparent;
+    backdrop-filter: brightness(85%);
 }
 .text_banner_section {
-    width: 60%;
+    width: 100%;
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
+}
+.text_banner_section > button, .text_banner_section > p, .text_banner_section > h1 {
+    z-index: 3;
 }
 .text_banner_section > h1 {
     font-size: 50px;
@@ -179,9 +166,9 @@ nav {
     position: relative;
     padding: 60px 5%;
     display: grid;
-    grid-template-columns: repeat(4, 23%);
+    grid-template-columns: repeat(5, 18%);
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 .product_box {
     height: auto;
@@ -293,25 +280,9 @@ nav {
     transition: all 0.2s ease-in-out;
     background: transparent;
     backdrop-filter: brightness(65%);
-    -webkit-backdrop-filter: brightness(65%);
 }
 .Up_coming_item:hover::after {
-    -webkit-backdrop-filter: brightness(40%);
-}
-
-@media only screen and (max-width: 960px) {
-    .changed_images_banner_section {
-        width: 50%;
-        height: 80%;
-        position: relative; 
-        display: flex; 
-        align-items: center; 
-        justify-content: space-evenly; 
-        gap: 15px;
-    }
-    .text_banner_section {
-        width: 50%;
-    }
+    backdrop-filter: brightness(40%);
 }
 @media only screen and (max-width: 900px) {
     .products_section {
@@ -319,14 +290,7 @@ nav {
     }
 }
 @media only screen and (max-width: 800px) {
-    .banner {
-        flex-direction: column-reverse;
-    }
-    .changed_images_banner_section {
-        width: 100%;
-    }
     .text_banner_section {
-        width: 100%;
         text-align: center;
         align-items: center;
     }
@@ -340,27 +304,6 @@ nav {
     .text_banner_section > button {
         padding: 8px 30px;
         border-radius: 30px;
-    }
-    .images_box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .images_box::before {
-        display: none;
-    }
-    .images_box::after {
-        content: '25% Discount';
-        padding: 10px;
-        border-radius: 10px;
-        background: black;
-        color: whitesmoke;
-        font-weight: 700;
-        font-size: 16px;
-        position: relative;
-        top: -60px;
-        text-align: center;
     }
     .products_section {
         gap: 20px;
@@ -376,17 +319,19 @@ nav {
 }
 @media only screen and (max-width: 600px) {
     .products_section {
-        gap: 12px;
-        grid-template-columns: repeat(2, 49%);
+        gap: 30px;
+        grid-template-columns: repeat(2, 45%);
     }
-    .product_box_image {
-        padding: 30px 12.5px 0px 12.5px;
+}
+@media only screen and (max-width: 475px){
+    .text_banner_section > p {
+        width: 90%;
+    }
+    .banner {
+        padding: 100px 5%;
     }
 }
 @media only screen and (max-width: 360px) {
-    .images_box {
-        width: 100%;
-    }
     .product_heading {
         font-size: 14px;
     }

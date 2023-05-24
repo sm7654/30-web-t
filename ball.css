@@ -40,8 +40,7 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    background-color: white;
-    box-shadow: 0px -3px 12px darkgray;
+    background: transparent;
     z-index: 99;
     transition: all 0.35s ease-in-out;
 }
@@ -136,7 +135,7 @@ nav {
 }
 .banner {
     width: 100%;
-    height: fit-content; 
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +153,7 @@ nav {
     height: 100%;
     position: absolute;
     background: transparent;
-    backdrop-filter: brightness(85%);
+    backdrop-filter: brightness(60%);
 }
 .text_banner_section {
     width: 100%;

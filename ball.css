@@ -43,6 +43,7 @@ header {
     background: transparent;
     z-index: 99;
     transition: all 0.35s ease-in-out;
+    backdrop-filter: blur(8px);
 }
 nav {
     width: 93%;
@@ -113,10 +114,8 @@ nav {
     transition: all 200ms ease-in-out;
     padding: 7px;
     cursor: pointer;
-}
-.icon_header:hover {
-    background: #ededed;
-    border-radius: 50%;
+    border: 1px solid transparent;
+    fill: #E5E4E2;
 }
 .logo {
     width: 135px;
@@ -307,19 +306,22 @@ nav {
     backdrop-filter: brightness(40%);
 }
 @media only screen and (max-width: 900px) {
+    .banner {
+        padding: 10%;
+    }
     .text_banner_section {
         text-align: center;
         align-items: center;
     }
     .text_banner_section > h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
     .text_banner_section > p {
         width: 85%;
-        font-size: 15px;
+        font-size: 14px;
     }
     .text_banner_section > button {
-        padding: 8px 30px;
+        padding: 6px 26px;
         border-radius: 30px;
     }
     .products_section {
@@ -353,7 +355,7 @@ nav {
         width: 90%;
     }
     .banner {
-        padding: 100px 5%;
+        padding: 100px 2%;
     }
 }
 @media only screen and (max-width: 360px) {

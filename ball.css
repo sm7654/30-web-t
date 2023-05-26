@@ -36,9 +36,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-.OverFlowY {
-    overflow-y: hidden;
-}
 .responsive_menu {
     width: 100%;
     height: 0%;
@@ -65,7 +62,7 @@ body {
     z-index: 55;
 }
 .backdrop-display {
-    height: 10000px !important;
+    height: 100% !important;
 }
 
 .ul_responsive_wraper {

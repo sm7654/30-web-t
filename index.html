@@ -23,11 +23,11 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                   </svg>
             </ul>
-            <div class="bars-wraper" id="bars">
+            <button class="bars-wraper" id="bars">
                 <div class="bars"></div>
-                <div class="bars" id="bar_2"></div>
-                <div class="bars" id="bar_3"></div>
-            </div>
+                <div class="bars bar_2_3" id="bar_2"></div>
+                <div class="bars bar_2_3" id="bar_3"></div>
+            </button>
         </nav>
     </header>
     <section class="banner">
@@ -260,68 +260,66 @@
 
 
     <script>
-        let i = 0;
-        let a = 0;
-        const banner_height = document.getElementsByClassName("banner")[0].clientHeight - 60;
-        const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
-        const icon_header = document.getElementsByClassName("icon_header")
-        const bars_wraper = document.getElementById("bars");
-        const header = document.getElementById("header");
-        const height = window.scrollTop;
+        document.addEventListener('DOMContentLoaded', function() {
+            let i = 0;
+            let a = 0;
+            const banner_height = document.getElementsByClassName("banner")[0].clientHeight - 80;
+            const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
+            const icon_header = document.getElementsByClassName("icon_header")
+            const bars_wraper = document.getElementById("bars");
+            const header = document.getElementById("header");
+            const bars = document.getElementsByClassName("bar_2_3");
+            const height = window.scrollTop;
 
 
-        function hover_product(Id, basketball_name) {
-            const box_buttons = document.getElementById(Id);
-            const basketball = document.getElementById(basketball_name);
-            /* IF condition here to avoid getting 
-                Error messeges
-            */
-            if (basketball===null) {
-                box_buttons.style.opacity = "1";
-            } else {
-                basketball.style.transform = "translateY(-40px)";
-                box_buttons.style.opacity = "1";
-            }
-        }
-        function unhover_product(Id, basketball_name) {
-            const box_buttons = document.getElementById(Id);
-            const basketball = document.getElementById(basketball_name);
-            /* IF condition here to avoid getting 
-                Error messeges
-            */
-            if (basketball===null) {
-                box_buttons.style.opacity = "0";
-            } else {
-                basketball.style.transform = "translateY(0px)";
-                box_buttons.style.opacity = "0";
-            }
-        }
-
-        bars_wraper.addEventListener('click', function() {
-            const bar2 = document.getElementById("bar_2");
-            const bar3 = document.getElementById("bar_3");
-            if (bar2.style.alignSelf === "flex-end"){
-                bar2.style.alignSelf = "flex-start";
-                bar3.style.alignSelf = "flex-start";
-            } else {
-                bar2.style.alignSelf = "flex-end";
-                bar3.style.alignSelf = "flex-end";
-            }
-        });
-        window.addEventListener('scroll', function() {
-            var scrollPosition = window.pageYOffset;
-            
-            if (scrollPosition >= banner_height) {
-                header.style.background = "white";
-                for (let i=0; i<icon_header.length; i++) {
-                    icon_header[i].style.fill = "black";
-                }
-            } else {
-                header.style.background = "none";
-                for (let i=0; i<icon_header.length; i++) {
-                    icon_header[i].style.fill = "#E5E4E2";
+            function hover_product(Id, basketball_name) {
+                const box_buttons = document.getElementById(Id);
+                const basketball = document.getElementById(basketball_name);
+                /* IF condition here to avoid getting 
+                    Error messeges
+                */
+                if (basketball===null) {
+                    box_buttons.style.opacity = "1";
+                } else {
+                    basketball.style.transform = "translateY(-40px)";
+                    box_buttons.style.opacity = "1";
                 }
             }
+            function unhover_product(Id, basketball_name) {
+                const box_buttons = document.getElementById(Id);
+                const basketball = document.getElementById(basketball_name);
+                /* IF condition here to avoid getting 
+                    Error messeges
+                */
+                if (basketball===null) {
+                    box_buttons.style.opacity = "0";
+                } else {
+                    basketball.style.transform = "translateY(0px)";
+                    box_buttons.style.opacity = "0";
+                }
+            }
+
+            bars_wraper.addEventListener('click', function() {
+                for (let i = 0; i<2; i++) {
+                    bars[i].classList.toggle("active");
+                }
+                document.body.classList.toggle("OverFlowY");
+            });
+            window.addEventListener('scroll', function() {
+                var scrollPosition = window.pageYOffset;
+                
+                if (scrollPosition >= banner_height) {
+                    header.style.background = "white";
+                    for (let i=0; i<icon_header.length; i++) {
+                        icon_header[i].style.fill = "black";
+                    }
+                } else {
+                    header.style.background = "none";
+                    for (let i=0; i<icon_header.length; i++) {
+                        icon_header[i].style.fill = "#E5E4E2";
+                    }
+                }
+            });
         });
     </script>
 </body>

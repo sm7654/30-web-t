@@ -9,19 +9,17 @@
     <title>Driball-x - best way to play basketball</title>
 </head>
 <body>
+
+
     <header id="header">
         <nav>
             <img class="logo" src="./images/horizoal-orenge-logo.png" alt="logo" id="logo">
             <ul class="ul_header">
                 <a class="li_header" href="#collection"><li>Collection</li></a>
                 <a class="li_header" href="#"><li>Contact Us</li></a>
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="icon_header bi bi-cart3" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="icon_header bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                  </svg>
+                <a class="li_header" href="#"><li>My cart</li></a>                
+                <a class="li_header" href="#"><li>Login</li></a>
+
             </ul>
             <button class="bars-wraper" id="bars">
                 <div class="bars"></div>
@@ -29,7 +27,28 @@
                 <div class="bars bar_2_3" id="bar_3"></div>
             </button>
         </nav>
+        <section class="responsive_menu">
+            <div class="ul_responsive_wraper">
+                <ul class="ul_responsive">
+                    <div class="li_wraper_top">
+                        <li class="li_responsive">Collection</li>
+                        <li class="li_responsive">Contact us</li>
+                    </div>
+                    <div class="technical_responsive">
+                        <aside class="my_cart_login_responsive">
+                            <a href="#" class="li_responsive">My cart</a>
+                            <a href="#" class="li_responsive">Login</a>
+                        </aside>
+                        <a href="#" class="my_account_wraper">
+                            Move to payment
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </section>
     </header>
+
+    </section>
     <section class="banner">
         <div class="text_banner_section">
             <h1>
@@ -262,13 +281,22 @@
     <script>
         let i = 0;
         let a = 0;
+        const banner = document.getElementsByClassName("banner");
         const banner_height = document.getElementsByClassName("banner")[0].clientHeight - 80;
         const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
-        const icon_header = document.getElementsByClassName("icon_header")
+        const login_cart = document.getElementsByClassName("li_header");
         const bars_wraper = document.getElementById("bars");
         const header = document.getElementById("header");
+        const ResponsivMmenu = document.getElementsByClassName("responsive_menu");
         const bars = document.getElementsByClassName("bar_2_3");
         const height = window.scrollTop;
+        function cancel_menu() {
+            if (document.body.clientWidth > 900 && document.body.classList.contains("OverFlowY")) {
+                bars_clicked();
+            }
+        }
+
+        window.addEventListener("resize", cancel_menu);
 
 
         function hover_product(Id, basketball_name) {
@@ -298,24 +326,31 @@
             }
         }
 
-        bars_wraper.addEventListener('click', function() {
-            for (let i = 0; i<2; i++) {
+        bars_wraper.addEventListener('click', bars_clicked);
+
+        function bars_clicked() {
+            for (let i = 0; i < 2; i++) {
                 bars[i].classList.toggle("active");
             }
             document.body.classList.toggle("OverFlowY");
-        });
+            header.classList.toggle("white_back");
+            ResponsivMmenu[0].classList.toggle('scale_x');
+            banner[0].classList.toggle("top");
+        }
         window.addEventListener('scroll', function() {
             var scrollPosition = window.pageYOffset;
             
             if (scrollPosition >= banner_height) {
                 header.style.background = "white";
-                for (let i=0; i<icon_header.length; i++) {
-                    icon_header[i].style.fill = "black";
+                header.style.boxShadow = "0px -6px 10px grey"
+                for (let i=0; i<login_cart.length; i++) {
+                    login_cart[i].style.color = "black";
                 }
             } else {
                 header.style.background = "none";
-                for (let i=0; i<icon_header.length; i++) {
-                    icon_header[i].style.fill = "#E5E4E2";
+                header.style.boxShadow = "none"
+                for (let i=0; i<login_cart.length; i++) {
+                    login_cart[i].style.color = "white";
                 }
             }
         });

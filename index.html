@@ -9,7 +9,7 @@
     <title>Driball-x - best way to play basketball</title>
 </head>
 <body>
-
+<div class="backdrop"></div>
 
     <header id="header">
         <nav>
@@ -31,8 +31,8 @@
             <div class="ul_responsive_wraper">
                 <ul class="ul_responsive">
                     <div class="li_wraper_top">
-                        <li class="li_responsive">Collection</li>
-                        <li class="li_responsive">Contact us</li>
+                        <li class="li_responsive li_info">Collection</li>
+                        <li class="li_responsive li_info">Contact us</li>
                     </div>
                     <div class="technical_responsive">
                         <aside class="my_cart_login_responsive">
@@ -329,13 +329,14 @@
         bars_wraper.addEventListener('click', bars_clicked);
 
         function bars_clicked() {
+            ResponsivMmenu[0].classList.toggle('scale_x');
+            var backdrop = document.getElementsByClassName("backdrop");
+            header.classList.toggle("white_back");
+            document.body.classList.toggle("OverFlowY");
+            backdrop[0].classList.toggle("backdrop-display");
             for (let i = 0; i < 2; i++) {
                 bars[i].classList.toggle("active");
-            }
-            document.body.classList.toggle("OverFlowY");
-            header.classList.toggle("white_back");
-            ResponsivMmenu[0].classList.toggle('scale_x');
-            banner[0].classList.toggle("top");
+            }        
         }
         window.addEventListener('scroll', function() {
             var scrollPosition = window.pageYOffset;

@@ -260,66 +260,64 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let i = 0;
-            let a = 0;
-            const banner_height = document.getElementsByClassName("banner")[0].clientHeight - 80;
-            const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
-            const icon_header = document.getElementsByClassName("icon_header")
-            const bars_wraper = document.getElementById("bars");
-            const header = document.getElementById("header");
-            const bars = document.getElementsByClassName("bar_2_3");
-            const height = window.scrollTop;
+        let i = 0;
+        let a = 0;
+        const banner_height = document.getElementsByClassName("banner")[0].clientHeight - 80;
+        const addToCart = document.getElementsByClassName("product_box_buttons_wraper");
+        const icon_header = document.getElementsByClassName("icon_header")
+        const bars_wraper = document.getElementById("bars");
+        const header = document.getElementById("header");
+        const bars = document.getElementsByClassName("bar_2_3");
+        const height = window.scrollTop;
 
 
-            function hover_product(Id, basketball_name) {
-                const box_buttons = document.getElementById(Id);
-                const basketball = document.getElementById(basketball_name);
-                /* IF condition here to avoid getting 
-                    Error messeges
-                */
-                if (basketball===null) {
-                    box_buttons.style.opacity = "1";
-                } else {
-                    basketball.style.transform = "translateY(-40px)";
-                    box_buttons.style.opacity = "1";
+        function hover_product(Id, basketball_name) {
+            const box_buttons = document.getElementById(Id);
+            const basketball = document.getElementById(basketball_name);
+            /* IF condition here to avoid getting 
+                Error messeges
+            */
+            if (basketball===null) {
+                box_buttons.style.opacity = "1";
+            } else {
+                basketball.style.transform = "translateY(-40px)";
+                box_buttons.style.opacity = "1";
+            }
+        }
+        function unhover_product(Id, basketball_name) {
+            const box_buttons = document.getElementById(Id);
+            const basketball = document.getElementById(basketball_name);
+            /* IF condition here to avoid getting 
+                Error messeges
+            */
+            if (basketball===null) {
+                box_buttons.style.opacity = "0";
+            } else {
+                basketball.style.transform = "translateY(0px)";
+                box_buttons.style.opacity = "0";
+            }
+        }
+
+        bars_wraper.addEventListener('click', function() {
+            for (let i = 0; i<2; i++) {
+                bars[i].classList.toggle("active");
+            }
+            document.body.classList.toggle("OverFlowY");
+        });
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            
+            if (scrollPosition >= banner_height) {
+                header.style.background = "white";
+                for (let i=0; i<icon_header.length; i++) {
+                    icon_header[i].style.fill = "black";
+                }
+            } else {
+                header.style.background = "none";
+                for (let i=0; i<icon_header.length; i++) {
+                    icon_header[i].style.fill = "#E5E4E2";
                 }
             }
-            function unhover_product(Id, basketball_name) {
-                const box_buttons = document.getElementById(Id);
-                const basketball = document.getElementById(basketball_name);
-                /* IF condition here to avoid getting 
-                    Error messeges
-                */
-                if (basketball===null) {
-                    box_buttons.style.opacity = "0";
-                } else {
-                    basketball.style.transform = "translateY(0px)";
-                    box_buttons.style.opacity = "0";
-                }
-            }
-
-            bars_wraper.addEventListener('click', function() {
-                for (let i = 0; i<2; i++) {
-                    bars[i].classList.toggle("active");
-                }
-                document.body.classList.toggle("OverFlowY");
-            });
-            window.addEventListener('scroll', function() {
-                var scrollPosition = window.pageYOffset;
-                
-                if (scrollPosition >= banner_height) {
-                    header.style.background = "white";
-                    for (let i=0; i<icon_header.length; i++) {
-                        icon_header[i].style.fill = "black";
-                    }
-                } else {
-                    header.style.background = "none";
-                    for (let i=0; i<icon_header.length; i++) {
-                        icon_header[i].style.fill = "#E5E4E2";
-                    }
-                }
-            });
         });
     </script>
 </body>

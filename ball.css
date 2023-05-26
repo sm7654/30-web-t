@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
+root {
+    --height--: calc(100vh - constant(safe-area-inset-top) - constant(safe-area-inset-bottom));
+}
 html {
     scroll-behavior: smooth;
 }
@@ -52,7 +55,7 @@ body {
 }
 .scale_x {
     width: 90% !important;
-    height: calc(100vh - 60px) !important;
+    height: calc(var(--height--) - 60px) !important;
 }
 .ul_responsive_wraper {
     width: 100%;
@@ -210,7 +213,7 @@ nav {
 }
 .banner {
     width: 100%;
-    height: 100vh; 
+    height: var(--height--); 
     display: flex;
     justify-content: center;
     align-items: center;

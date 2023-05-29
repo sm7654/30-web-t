@@ -17,8 +17,10 @@
             <ul class="ul_header">
                 <a class="li_header" href="#collection"><li>Collection</li></a>
                 <a class="li_header" href="#contect_us_section"><li>Contact Us</li></a>
+                <a class="li_header" href="#"><li>About Us</li></a>
                 <a class="li_header" href="#"><li>Login</li></a>
                 <div class="cart_wraper">
+                    <div class="items_count" id="items_count">0</div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi icons_header" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                     </svg>
@@ -81,7 +83,7 @@
     </section>
 
     <section id="collection" class="products_section">
-        <aside class="product_box" onmouseover="hover_product('Boston_t_shirt')" onmouseout="unhover_product('Boston_t_shirt')" id="First-Item">
+        <aside class="product_box" onmouseover="hover_product('Boston_t_shirt')" onmouseout="unhover_product('Boston_t_shirt')" onclick="onclick_items()" id="First-Item">
             <div class="product_box_image">
                 <img src="./images/teams logos/2.png" style="width: 100%;" alt="">
             </div>
@@ -107,7 +109,7 @@
             </div>
         </aside>
 
-        <aside class="product_box" onmouseover="hover_product('SLOVENIJA-T-shirt')" onmouseout="unhover_product('SLOVENIJA-T-shirt')">
+        <aside class="product_box" onmouseover="hover_product('SLOVENIJA-T-shirt')" onmouseout="unhover_product('SLOVENIJA-T-shirt')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/teams logos/1.png" style="width: 100%;" alt="">
             </div>
@@ -133,7 +135,7 @@
             </div>
         </aside>
 
-        <aside class="product_box" onmouseover="hover_product('Bulls-tshirt')" onmouseout="unhover_product('Bulls-tshirt')">
+        <aside class="product_box" onmouseover="hover_product('Bulls-tshirt')" onmouseout="unhover_product('Bulls-tshirt')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/teams logos/3.png" style="width: 100%;" alt="">
             </div>
@@ -159,7 +161,7 @@
             </div>
         </aside>
 
-        <aside class="product_box" onmouseover="hover_product('LA-Tshirt')" onmouseout="unhover_product('LA-Tshirt')">
+        <aside class="product_box" onmouseover="hover_product('LA-Tshirt')" onmouseout="unhover_product('LA-Tshirt')" onclick="onclick_items()">
            <div class="product_box_image">
                 <img src="./images/teams logos/4.png" style="width: 100%;" alt="">
             </div>
@@ -190,7 +192,7 @@
 
 
 
-        <aside class="product_box" onmouseover="hover_product('Nike-Standard-8P','Nike Standard 8P basketball')" onmouseout="unhover_product('Nike-Standard-8P','Nike Standard 8P basketball')">
+        <aside class="product_box" onmouseover="hover_product('Nike-Standard-8P','Nike Standard 8P basketball')" onmouseout="unhover_product('Nike-Standard-8P','Nike Standard 8P basketball')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/basketballs/1.png" style="width: 100%;" alt="" class="basketballs" id="Nike Standard 8P basketball">
             </div>
@@ -216,7 +218,7 @@
             </button>
          </aside>
 
-        <aside class="product_box" onmouseover="hover_product('Wilson-WNBA-Heir', 'Wilson-DNA')" onmouseout="unhover_product('Wilson-WNBA-Heir', 'Wilson-DNA')">
+        <aside class="product_box" onmouseover="hover_product('Wilson-WNBA-Heir', 'Wilson-DNA')" onmouseout="unhover_product('Wilson-WNBA-Heir', 'Wilson-DNA')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/basketballs/7.png" style="width: 100%;" alt="" class="basketballs" id="Wilson-DNA">
             </div>
@@ -235,7 +237,7 @@
             </div>
         </aside>
 
-        <aside class="product_box" onmouseover="hover_product('Nike-Next-Nature', 'nike-skills-basketball')" onmouseout="unhover_product('Nike-Next-Nature','nike-skills-basketball')">
+        <aside class="product_box" onmouseover="hover_product('Nike-Next-Nature', 'nike-skills-basketball')" onmouseout="unhover_product('Nike-Next-Nature','nike-skills-basketball')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/basketballs/3.png" style="width: 100%;" alt="" class="basketballs" id="nike-skills-basketball">
             </div>
@@ -254,7 +256,7 @@
             </div>
         </aside>
 
-        <aside class="product_box" onmouseover="hover_product('Nike-lebron', 'Lebron-basketball')" onmouseout="unhover_product('Nike-lebron', 'Lebron-basketball')">
+        <aside class="product_box" onmouseover="hover_product('Nike-lebron', 'Lebron-basketball')" onmouseout="unhover_product('Nike-lebron', 'Lebron-basketball')" onclick="onclick_items()">
            <div class="product_box_image">
                 <img src="./images/basketballs/5.png" style="width: 100%;" alt="" class="basketballs" id="Lebron-basketball">
             </div>
@@ -274,7 +276,7 @@
         </aside>
 
 
-        <aside class="product_box" onmouseover="hover_product('Basketball-stand')" onmouseout="unhover_product('Basketball-stand')">
+        <aside class="product_box" onmouseover="hover_product('Basketball-stand')" onmouseout="unhover_product('Basketball-stand')" onclick="onclick_items()">
             <div class="product_box_image">
                  <img src="./images/basketballs/basket-ball_stad.png" style="width: 100%;" alt="">
              </div>
@@ -299,15 +301,21 @@
 
 
 
-         <aside class="product_box" onmouseover="hover_product('Air-Jordan')" onmouseout="unhover_product('Air-Jordan')">
+         <aside class="product_box" onmouseover="hover_product('Air-Jordan')" onmouseout="unhover_product('Air-Jordan')" onclick="onclick_items()">
             <div class="product_box_image">
                 <img src="./images/shoe-1.png" style="width: 100%;" alt="">
             </div>
             <div class="product_info_wraper">
-                <p id="product_heading" class="product_heading">Air Jordan</p>
+                <p id="product_heading" class="product_heading">Air Jordan 37 Low ''Nothing But Net''</p>
                 <p id="product_price" class="product_price" style="font-weight: bold;">200.00$</p>
             </div>
             <div class="product_box_buttons_wraper" id="Air-Jordan">
+                <div class="sizes_wraper">
+                    <p>38</p>
+                    <p>39</p>
+                    <p>40</p>
+                    <p>42</p>
+                </div>  
                 <button class="shop_buttons">
                     <p>Add to cart</p> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
@@ -460,6 +468,15 @@
         function OptionSelected(x) {
             button_dropdwon.innerHTML = x.innerHTML;
             dropdown_options();
+        }
+        for (i = 0; i < divs.length; ++i) {
+            item_clicked[i].click();
+        };
+        function onclick_items() { 
+            console.log("seccess");
+            sum = parseInt(items_count.innerHTML);
+            sum += 1;
+            items_count.innerHTML = sum;
         }
     </script>
 </body>

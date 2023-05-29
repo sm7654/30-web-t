@@ -6,9 +6,6 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
-:focus {
-    outline: 2px solid #f45029;
-}
 html {
     scroll-behavior: smooth;
 }
@@ -212,8 +209,7 @@ nav {
     display: grid;
     place-items: center;
 }
-.cart_wraper:before {
-    content: '0';
+.items_count {
     width: 15px;
     right: 0;
     top: 0;
@@ -224,6 +220,7 @@ nav {
     position: absolute;
     display: grid;
     place-items: center;
+    padding: 2px;
 }
 .icons_header {
     box-sizing: content-box;

@@ -209,7 +209,8 @@ nav {
     display: grid;
     place-items: center;
 }
-.items_count {
+.cart_wraper:before {
+    content: '0';
     width: 15px;
     right: 0;
     top: 0;
@@ -220,7 +221,6 @@ nav {
     position: absolute;
     display: grid;
     place-items: center;
-    padding: 2px;
 }
 .icons_header {
     box-sizing: content-box;
@@ -497,16 +497,28 @@ nav {
     width: 100%;
     padding-left: 10px;
     padding: 10px;
-    background: transparent;
     border: none;
     color: black;
     font-size: 15px;
     background: white;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #ededed;
+    border: 1px solid transparent;
 }
 .input_form::placeholder {
     color: black;
+}
+.invalid {
+    outline: none;
+    border: 1px solid #FF0000;
+    border-radius: 5px;
+    position: relative !important;
+}
+.valid {
+    outline: none;
+    border: 1px solid green;
+    border-radius: 5px;
+    position: relative !important;
 }
 .selection {
     width: 70%;
@@ -519,7 +531,7 @@ nav {
     color: black;
     box-shadow: 0px 0px 10px #ededed;
 }
-.button_dropdown /* the p */{
+.button_dropdown /* the 'Whats the problam' p */{
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -563,6 +575,7 @@ nav {
     width: 70%;
 }       
 .send_button_contact_us {
+    width: fit-content;
     padding: 6px 20px;
     background: #fe8c00;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
@@ -659,3 +672,55 @@ nav {
         font-size: 14px;
     }
 }
+
+
+
+
+.body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.wraper {
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
+    display: grid;
+    place-items: center;
+    position: relative;
+    transition: all 1s;
+    }
+#rotare {
+    rotate: 0deg;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+#a {
+    background-color: #f45029;
+    transform: translate(
+        calc(sin(180deg)* 250px),
+        calc(cos(180deg)* 250px)
+    );
+}
+#b {
+    background-color: blue;
+    transform: translate(
+        calc(sin(-90deg)* 250px),
+        calc(cos(-90deg)* 250px)
+    );
+}
+#c {
+    background-color: deeppink;
+    transform: translate(calc(sin(0deg) * 250px), calc(cos(0deg) * 250px));
+ }
+ #d {
+    background-color: gold;
+    transform: translate(
+        calc(sin(90deg)* 250px),
+        calc(cos(90deg)* 250px)
+    );
+ }

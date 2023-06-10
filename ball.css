@@ -32,7 +32,6 @@ html {
 body {
     width: 100%;
     height: fit-content;
-    overflow-x: hidden;
     position: relative;
 }
 .responsive_menu {
@@ -113,8 +112,7 @@ body {
     height: 14px;
 }
 header {
-    max-width: 100%;
-    min-width: 100%;
+    width: 100%;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -298,6 +296,125 @@ nav {
     cursor: pointer;
     transition: all 0.2s ease-out;
 }
+
+
+.reviews_and_text_section {
+    background: linear-gradient(#ededed 85%, transparent);    
+    padding-bottom: 100px;
+}
+.reviews_text_section {
+    text-align: center;
+    padding: 20px 0px 10px 0px;
+}
+.reviews_text_section > h1 {
+    font-size: 35px;
+    padding: 10px;
+}
+.reviews_text_section > p {
+    font-weight: 500;
+    font-size: 15px;
+}
+.reviews_section {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: row-reverse;
+
+}
+.scroll_down_buttons_reviews{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    gap: 15px;
+    z-index: 33;
+}
+.bii {
+    width: 25px;
+    height: 40px;
+    box-sizing: content-box;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.reviews_gallery_wraper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    gap: 20px;
+    align-items: center;
+    align-content: space-between;
+    top: 0;
+}
+.view_port {
+    position: absolute;
+    height: 430px;
+    width: 300px;
+    z-index: 5;
+    background: linear-gradient(transparent 80%, #ededed);
+}  
+.card {
+    width: 290px;
+    height: 250px;
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+    transform: translateY(0px);
+    transition: transform 0.4s ease-in-out;
+    padding: 15px;
+}
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .review-title {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .review-rating {
+    color: #ffd700;
+    font-size: 16px;
+  }
+  
+  .star {
+    margin-right: 3px;
+  }
+  
+  .review-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .review-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .author-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .author-name {
+    font-size: 12px;
+  }
+
+
+
+
+
 .products_section {
     position: relative;
     padding: 60px 5%;
@@ -446,7 +563,7 @@ nav {
     justify-content: center;
     position: relative;
     top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 .Contact_us_block {
     position: absolute;

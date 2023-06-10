@@ -50,3 +50,4 @@ const invalidCharacters = [
     '"',
     "'"
   ];
+let scroll = 0;

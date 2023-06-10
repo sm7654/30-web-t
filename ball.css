@@ -344,8 +344,8 @@ nav {
 .reviews_gallery_wraper {
     width: 100%;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 290px);
     padding: 20px 0px;
     gap: 20px;
     align-items: center;
@@ -356,11 +356,11 @@ nav {
     position: absolute;
     height: 430px;
     width: 300px;
+    top: 20px;
     z-index: 5;
     background: linear-gradient(transparent 80%, #ededed);
 }  
 .card {
-    width: 290px;
     height: 250px;
     background-color: white;
     border-radius: 15px;
@@ -721,7 +721,7 @@ nav {
         pointer-events: all;
     }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
     .banner {
         padding: 10%;
     }
@@ -762,6 +762,9 @@ nav {
     .sizes_wraper > p {
         font-size: 10px;
     }
+    .reviews_gallery_wraper {
+        grid-template-columns: repeat(2, 290px);
+    }
 }
 @media only screen and (max-width: 600px) {
     .products_section {
@@ -774,6 +777,9 @@ nav {
     .text_area_form {
         max-width: 90%;
         min-width: 90%;
+    }
+    .reviews_gallery_wraper {
+        grid-template-columns: repeat(1, 280px);
     }
 }
 @media only screen and (max-width: 475px){

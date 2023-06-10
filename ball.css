@@ -355,7 +355,7 @@ nav {
 .view_port {
     position: absolute;
     height: 430px;
-    width: 300px;
+    width: 100%;
     top: 20px;
     z-index: 5;
     background: linear-gradient(transparent 80%, #ededed);
@@ -386,7 +386,9 @@ nav {
   }
   
   .star {
-    margin-right: 3px;
+    margin: 5px 3px 5px 0px;
+    color: gold;
+    font-size: 13px;
   }
   
   .review-text {

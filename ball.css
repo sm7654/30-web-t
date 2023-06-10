@@ -316,7 +316,7 @@ nav {
 }
 .reviews_section {
     width: 100%;
-    height: 450px;
+    height: 350px;
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -331,7 +331,7 @@ nav {
     flex-direction: row;
     position: absolute;
     bottom: 0;
-    gap: 15px;
+    gap: 20px;
     z-index: 33;
 }
 .bii {
@@ -341,31 +341,38 @@ nav {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+.bii:nth-child(1) {
+    rotate: -90deg;
+}
+.bii:nth-child(2) {
+    rotate: -90deg;
+}
 .reviews_gallery_wraper {
     width: 100%;
     position: relative;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 290px);
     padding: 20px 0px;
     gap: 20px;
     align-items: center;
+    justify-content: center;
     align-content: space-between;
     top: 0;
 }
 .view_port {
     position: absolute;
-    height: 430px;
-    width: 100%;
+    width: 100vw;
+    height: calc(100% - 20px);
     top: 20px;
     z-index: 5;
-    background: linear-gradient(transparent 80%, #ededed);
+    background: linear-gradient(to right, #ededed -65%, transparent 50%, #ededed 165%);
 }  
 .card {
+    width: 350px;
     height: 250px;
     background-color: white;
     border-radius: 15px;
     position: relative;
-    transform: translateY(0px);
     transition: transform 0.4s ease-in-out;
     padding: 15px;
 }

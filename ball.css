@@ -426,7 +426,7 @@ nav {
 
 .products_section {
     position: relative;
-    padding: 60px 5%;
+    padding: 60px 2%;
     display: grid;
     grid-template-columns: repeat(5, 18%);
     justify-content: center;
@@ -438,7 +438,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
     padding: 0px 0px 6px 0px;
     border: 1px solid transparent;
@@ -455,7 +455,7 @@ nav {
     display: grid;
     place-items: center;
     background: linear-gradient(to top, #E5E4E2, white);
-    padding: 60px 12.5px 0px 12.5px;
+    padding: 40px 12.5px 0px 12.5px;
 }
 .basketballs {
     transition: all 0.4s ease-in-out;
@@ -578,6 +578,7 @@ nav {
     position: absolute;
     width: 70%;
     padding: 35px 0px;
+    border-radius: 10px 7em;
     display: grid;
     place-items: center;
     background: #fe8c00;  /* fallback for old browsers */

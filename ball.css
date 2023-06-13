@@ -435,18 +435,14 @@ nav {
 .product_box {
     height: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
     cursor: pointer;
     padding: 0px 0px 6px 0px;
-    border: 1px solid transparent;
     box-sizing: content-box;
     overflow: hidden;
 }
 .product_box:hover {
-    border: 1px solid #E5E4E2;
     box-shadow: 0px 0px 10px grey;
     
 }
@@ -481,7 +477,7 @@ nav {
     gap: 4px;
     justify-content: space-between;
     position: relative;
-    top: 7px;
+    margin-top: 7px;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     pointer-events: none;
@@ -517,11 +513,16 @@ nav {
     background-position: center center;
     background-size: cover;
     position: relative;
-    justify-content: end;
-    gap: 20px;
-    padding: 0px 0px 20px 0px;
+    justify-content: end !important;
+    gap: 20px !important;
+    padding: 0px 0px 20px 0px !important;
+    display: flex;
+    flex-direction: column;
     height: auto;
     border: none;
+}
+.Up_coming_item:before {
+    display: none !important;
 }
 .Up_coming_item:hover {
     border: none;
@@ -531,12 +532,14 @@ nav {
     font-size: 25px;
     z-index: 2;
     color: white;
-    text-align: left;
+    text-align: left !important;
     padding-left: 10%;
+    z-index: 5;
 }
 .Up_coming_item > button {
     width: 80%;
     transition: all 0.3s ease-in-out;
+    z-index: 5;
 }
 .Up_coming_item > button:hover {
     border: 1px solid transparent;
@@ -546,20 +549,20 @@ nav {
 }
 .Up_coming_item::after {
     content: '';
-    width: 100%;
-    height: calc(100%);
-    position: absolute;
-    top: 0;
-    padding: 0;
-    transition: all 0.2s ease-in-out;
-    background: transparent;
-    backdrop-filter: brightness(65%);
-    -webkit-backdrop-filter: brightness(65%);
+    width: 100% !important;
+    height: calc(100%) !important;
+    position: absolute !important;
+    top: 0 !important;
+    padding: 0 !important;
+    transition: all 0.2s ease-in-out !important;
+    background: transparent !important;
+    backdrop-filter: brightness(65%) !important;
+    -webkit-backdrop-filter: brightness(65%) !important;
 
 }
 .Up_coming_item:hover::after {
-    backdrop-filter: brightness(40%);
-    -webkit-backdrop-filter: brightness(40%);
+    backdrop-filter: brightness(40%) !important;
+    -webkit-backdrop-filter: brightness(40%) !important;
 }
 
 
@@ -571,14 +574,13 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 100px;
+    margin-top: 100px;
     padding-bottom: 80px;
 }
 .Contact_us_block {
     position: absolute;
     width: 70%;
     padding: 35px 0px;
-    border-radius: 10px 7em;
     display: grid;
     place-items: center;
     background: #fe8c00;  /* fallback for old browsers */
@@ -856,4 +858,144 @@ nav {
         calc(sin(90deg)* 250px),
         calc(cos(90deg)* 250px)
     );
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .product_box {
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+ }
+ .product_box::before {
+    content: '';
+    width: 200%;
+    height: 40%;
+    background: #f12711;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    position: absolute;
+    z-index: 2;
+    display: none;
+ }
+ .product_box:hover::before{
+    animation: rotate 4s linear infinite;
+    display: block;
+}
+.product_box:hover {
+    box-shadow: 0px 0px 10px #E5E4E2;
+}
+
+ @keyframes rotate {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+ .product_box::after {
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: white;
+    z-index: 3;
+    position: absolute;
+}
+ .product_box_wraper {
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+    justify-content: space-between;
  }

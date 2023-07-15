@@ -20,6 +20,7 @@ const form = document.getElementsByClassName("form_contact_us")[0];
 const button_send = document.getElementsByClassName("send_button_contact_us")[0];
 const email_value = document.getElementById("email");
 const name = document.getElementById("your_name");
+const product_box = document.getElementsByClassName("product_box");
 const invalidCharacters = [
     " ",
     "!",
@@ -51,3 +52,8 @@ const invalidCharacters = [
     "'"
   ];
 let scroll = 0;
+
+
+
+
+

@@ -22,7 +22,6 @@ html {
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: orangered;
-    border-radius: 30px; 
   }
   
   /* Handle on hover */
@@ -122,8 +121,6 @@ header {
     background: transparent;
     z-index: 99;
     transition: all 0.35s ease-in-out;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 .white_back {
     background: white !important;
@@ -323,7 +320,6 @@ nav {
     overflow: hidden;
     position: relative;
     flex-direction: row-reverse;
-
 }
 .scroll_down_buttons_reviews{
     display: flex;
@@ -375,6 +371,7 @@ nav {
     position: relative;
     transition: transform 0.4s ease-in-out;
     padding: 15px;
+    transition: all 200ms ease-in-out;
 }
 .review-header {
     display: flex;
@@ -423,14 +420,53 @@ nav {
 
 
 
-
+.filter_products {
+    background: whitesmoke;
+    padding: 7px 11px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ededed;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 15px;
+    position: relative;
+}
+.filter_products:hover {
+    background: #ededed;
+}
+.ul_filter {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 77;
+    left: 105%;
+    background: white;
+    top: 0%;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 0px solid #ededed;
+    height: 0%;
+    transition: all ease-in-out 0.5s;
+}
+.height_fit {
+    height: auto;
+    border: #ededed 1px solid;
+}
+.ul_filter > li {
+    list-style: none;
+    font-size: 16px;
+    width: 120px;
+    padding: 7px 15px 7px 5px;
+}
+.ul_filter > li:hover {
+    background: whitesmoke;
+}
 .products_section {
     position: relative;
-    padding: 60px 2%;
     display: grid;
     grid-template-columns: repeat(5, 18%);
     justify-content: center;
-    gap: 30px;
+    gap: 33px;
 }
 .product_box {
     height: auto;
@@ -574,7 +610,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 100px;
+    margin-top: 75px;
     padding-bottom: 80px;
 }
 .Contact_us_block {
@@ -706,9 +742,6 @@ nav {
 .send_button_contact_us {
     width: fit-content;
     padding: 6px 20px;
-    background: #fe8c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     border: none;
     align-self: flex-start;
@@ -716,8 +749,34 @@ nav {
     cursor: pointer;
     border-radius: 5px;
     font-weight: 600;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: #fe8c00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
 }
-
+.send_button_contact_us::before {
+    content: '';
+    background: #fe8c00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    animation: rotate 3s linear infinite;
+    position: absolute;    
+}
+.send_button_contact_us:hover::before {
+    width: 150%;
+    height: 400%;
+}
+.send_button_contact_us::after {
+    content: 'Send';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
 
 
 
@@ -960,11 +1019,11 @@ nav {
     display: none;
  }
  .product_box:hover::before{
-    animation: rotate 4s linear infinite;
+    animation: rotate 3s linear infinite;
     display: block;
 }
 .product_box:hover {
-    box-shadow: 0px 0px 10px #E5E4E2;
+    box-shadow: 0px 0px 20px #E5E4E2;
 }
 
  @keyframes rotate {

@@ -28,6 +28,9 @@ html {
   ::-webkit-scrollbar-thumb:hover {
     background: #f45029;
   }
+  a{
+    color: white;
+  }
 body {
     width: 100%;
     height: fit-content;

@@ -532,12 +532,12 @@ nav {
 }
 .shop_buttons {
     cursor: pointer;
-    background: black;
+    background: #0c1524;
     color: white;
     border: none;
     padding: 15px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #0c1524;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -576,6 +576,8 @@ nav {
     width: 80%;
     transition: all 0.3s ease-in-out;
     z-index: 5;
+    background: black;
+    border:  1px solid black;
 }
 .Up_coming_item > button:hover {
     border: 1px solid transparent;
@@ -626,6 +628,7 @@ nav {
 .Contact_us_block > h1 {
     font-size: 40px;
     color: white;
+    text-align: center;
 }
 .contact_us_form_wraper {
     width: 100%;
@@ -779,7 +782,106 @@ nav {
 }
 
 
+.footer {
+    background-color: #0c1524;
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: 105px 3%;
+}
 
+.footer_contact_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.footer_contact_section a {
+    width: fit-content;
+}
+.ul_footer {
+    list-style: none;
+    color: white;
+}
+.footer_contact_text {
+    display: flex;
+    align-items: flex-start;
+}
+.location {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 37.2093%;
+}
+#p_location {
+    width: fit-content;
+}
+.email_phone_number {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 25.2369%;
+}
+.phone_flex_email {
+    display: flex;
+    align-items: center;
+}
+.image_phone_email {
+    margin-right: 23px;
+}
+.about_us {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    width: 12.317%;
+}
+.terms_policy {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    width: 15.59%;
+}
+.social_media {
+    display: flex;
+    gap: 10px;
+}
+.social_media:hover {
+    color: hsl(176, 68%, 64%);
+}
+.social_media_a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+.social_media_a:hover {
+    color: hsl(176, 68%, 64%);
+    border: 1px solid hsl(176, 68%, 64%);
+}
+.social_medis_icons {
+    width: 13px;
+    height: 13px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    box-sizing: content-box;
+    fill: white;
+}
+.social_medis_icons:hover {
+    fill:  hsl(176, 68%, 64%);
+}
+.footer_fontweight_hover {
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+}
+.footer_fontweight_hover:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
 
 
 @media only screen and (min-width: 900px) {
@@ -870,66 +972,54 @@ nav {
 
 
 
-.body {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-}
-.wraper {
-    width: 500px;
-    height: 500px;
-    background-color: whitesmoke;
-    display: grid;
-    place-items: center;
-    position: relative;
-    transition: all 1s;
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1078px) {
+    .footer_contact_section {
+        width: 97%;
     }
-#rotare {
-    rotate: 0deg;
 }
-.box {
-    width: 50px;
-    height: 50px;
-    position: absolute;
+@media only screen and (max-width: 900px) {
+    .footer {
+        height: auto;
+    }
+    .footer_contact_section {
+        margin-top: 30px;
+    }
+    .footer_contact_text {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .ul_footer {
+        width: 100%;
+    }
+
 }
-#a {
-    background-color: #f45029;
-    transform: translate(
-        calc(sin(180deg)* 250px),
-        calc(cos(180deg)* 250px)
-    );
+@media only screen and (max-width: 506px) {
+    .footer_contact_section {
+        margin-top: 60px;
+    }
 }
-#b {
-    background-color: blue;
-    transform: translate(
-        calc(sin(-90deg)* 250px),
-        calc(cos(-90deg)* 250px)
-    );
+@media only screen and (max-width: 405px) {
+    .footer_contact_section {
+        margin-top: 70px;
+    }
+    .footer_contact_text {
+        padding-left: 25px;
+    }
+    #footer_logo {
+        padding-left: 25px;
+    }
 }
-#c {
-    background-color: deeppink;
-    transform: translate(calc(sin(0deg) * 250px), calc(cos(0deg) * 250px));
- }
- #d {
-    background-color: gold;
-    transform: translate(
-        calc(sin(90deg)* 250px),
-        calc(cos(90deg)* 250px)
-    );
- }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

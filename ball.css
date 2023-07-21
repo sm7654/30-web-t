@@ -611,25 +611,24 @@ nav {
     height: fit-content;
     background: #ededed;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 75px;
     padding-bottom: 80px;
 }
 .Contact_us_block {
-    position: absolute;
-    width: 70%;
+    top: 0;
+    position: relative;
+    width: 100%;
     padding: 35px 0px;
     display: grid;
     place-items: center;
-    background: #fe8c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(white, #ededed);
 }
 .Contact_us_block > h1 {
     font-size: 40px;
-    color: white;
+    color: #0c1524;
     text-align: center;
 }
 .contact_us_form_wraper {
@@ -649,7 +648,6 @@ nav {
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 100px;
 }
 .inputs_and_buttons_wraper {
     gap: 20px;   
@@ -674,9 +672,14 @@ nav {
     border-radius: 5px;
     box-shadow: 0px 0px 10px #ededed;
     border: 1px solid transparent;
+    transition: all 0.2s 0.01s;
 }
 .input_form::placeholder {
     color: black;
+}
+.input_form:focus {
+    width: 102%;
+    outline: none;
 }
 .invalid {
     outline: none;
@@ -829,6 +832,7 @@ nav {
 .phone_flex_email {
     display: flex;
     align-items: center;
+    color: white;
 }
 .image_phone_email {
     margin-right: 23px;

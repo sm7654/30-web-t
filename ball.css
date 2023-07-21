@@ -302,6 +302,7 @@ nav {
 .reviews_text_section {
     text-align: center;
     padding: 20px 0px 10px 0px;
+    color: #0c1524;
 }
 .reviews_text_section > h1 {
     font-size: 35px;
@@ -505,6 +506,7 @@ nav {
 }
 .product_price {
     font-size: 11px;
+    color: #0c1524;
 }
 .product_box_buttons_wraper {
     width: 100%;
@@ -783,7 +785,7 @@ nav {
 
 
 .footer {
-    background-color: #0c1524;
+    background: linear-gradient(#ededed, #0c1524);
     height: fit-content;
     width: 100%;
     display: grid;
@@ -830,6 +832,13 @@ nav {
 }
 .image_phone_email {
     margin-right: 23px;
+    width: 17px;
+    height: 17px;
+    fill: white;
+}
+.email_and_phone{
+    width: 15px;
+    height: 15px;
 }
 .about_us {
     display: flex;
@@ -852,15 +861,13 @@ nav {
 }
 .social_media_a {
     text-decoration: none;
-    color: white;
     border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
     box-sizing: content-box;
 }
 .social_media_a:hover {
-    color: hsl(176, 68%, 64%);
-    border: 1px solid hsl(176, 68%, 64%);
+    border: 1px solid #0c1524;
 }
 .social_medis_icons {
     width: 13px;
@@ -869,10 +876,10 @@ nav {
     place-items: center;
     padding: 10px;
     box-sizing: content-box;
-    fill: white;
+    fill: #ffffff;
 }
 .social_medis_icons:hover {
-    fill:  hsl(176, 68%, 64%);
+    fill: #0c1524;
 }
 .footer_fontweight_hover {
     width: fit-content;

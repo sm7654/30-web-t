@@ -18,7 +18,8 @@
                 <a class="li_header" href="#collection"><li>Collection</li></a>
                 <a class="li_header" href="#contect_us_section"><li>Contact Us</li></a>
                 <a class="li_header" href="./Untitled-1.html"><li>Login</li></a>
-                <div class="cart_wraper">
+                <div class="cart_wraper" onclick="document.getElementsByClassName('cart_section')[0].style.width = '300px';" style="cursor: pointer;">
+                    <div class="cart__item_count" id="cart__item_count">0</div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi icons_header" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                     </svg>
@@ -36,7 +37,7 @@
                 <ul class="ul_responsive">
                         <a href="#collection" class="li_responsive li_info" onclick="li_res_clicked()">Collection</a>
                         <a href="#contect_us_section" class="li_responsive li_info" onclick="li_res_clicked()">Contact us</a>
-                        <a href="#" class="li_responsive li_info" onclick="li_res_clicked()">My cart</a>
+                        <a class="li_responsive li_info" onclick="li_res_clicked(), document.getElementsByClassName('cart_section')[0].style.width = '300px';">My cart</a>
                         <div class="li_responsive li_info login_responsive">
                             <a href="#" class="login_button_res" onclick="li_res_clicked()">Login</a>
                         </div>
@@ -65,7 +66,23 @@
         </section>
     </header>
 
+    <section class="cart_section">
+        <div class="cart_section_menu">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="document.getElementsByClassName('cart_section')[0].style.width = '0px';" width="17" style="box-sizing: content-box; padding: 3px; cursor: pointer;" height="17" fill="currentColor" class=" bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+              </svg>
+              <h1>Cart</h1>
+              <div style="width: 24px; height: 24px;"></div>
+        </div>
+        <div class="ProsuctInCartSection">
+            <aside class="Item_wraper">
+
+            </aside>
+        </div>
     </section>
+
+
+
     <section class="banner">
         <div class="text_banner_section">
             <h1>
@@ -316,7 +333,7 @@
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
 
                         </button>
@@ -341,7 +358,7 @@
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -365,7 +382,7 @@
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -388,7 +405,7 @@
                                 <p>L</p>
                                 <p>XL</p>
                             </div>
-                            <button class="shop_buttons">
+                            <button class="shop_buttons" onclick="AddToCart()">
                                 <p>Add to cart</p> 
                             </button>
                         </div>
@@ -407,11 +424,11 @@
                         <img src="./images/basketballs/1.png" style="width: 100%;" alt="" class="basketballs" id="Nike Standard 8P basketball">
                     </div>
                     <div class="product_info_wraper">
-                        <p id="product_heading" class="product_heading">Nike Standard 8P basketball</p>
+                        <p id="product_heading" class="product_heading">Wilson NBA Atlanta Hawks Trae Young Mini Basketball</p>
                         <p id="product_price" class="product_price" style="font-weight: bold;">29.99$ <span style="text-decoration: line-through; font-weight: 400;">39.99$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-Standard-8P">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart('Wilson NBA Atlanta Hawks Trae Young Mini Basketball', '29.99$', './images/basketballs/1.png')" >
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -435,7 +452,7 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">29.99$ <span style="text-decoration: line-through; font-weight: 400;">39.99$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Wilson-WNBA-Heir">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -452,7 +469,7 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">39.99$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-Next-Nature">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -469,7 +486,7 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">49.99$ <span style="text-decoration: line-through; font-weight: 400;">37.5$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-lebron">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -487,7 +504,7 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">5.00$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Basketball-stand">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart()">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -510,7 +527,7 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">200.00$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Air-Jordan">
-                        <button class="shop_buttons">
+                        <button class="shop_buttons" onclick="AddToCart('Air Jordan', '200.00$', './images/shoe-1.png')">
                             <p>Add to cart</p> 
                         </button>
                     </div>
@@ -626,12 +643,14 @@
               <a class="social_media_a"><div class="icon">                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram social_medis_icons" viewBox="0 0 16 16">
                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
               </svg></div></a>
-              <a class="social_media_a"><div class="icon">                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter social_medis_icons" viewBox="0 0 16 16">
-                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-              </svg></div></a>
+              <a class="social_media_a" href="https://twitter.com" target="_blank"><div class="icon">                                              <svg viewBox="0 0 24 24" aria-hidden="true" class="r-18jsvk2 r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp social_medis_icons"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+              </div></a>
             </ul>
           </ul>
         </section>
+        <div style="width: 94%; text-align: center; color: #ededed; position: absolute; bottom: 10px; left: 0;">
+            <p>&copy; 2023 Driballx. All rights reserved. | <a href="#">Terms of Service</a></p>
+        </div>
       </footer>
 
 
@@ -792,6 +811,15 @@
                 }
              }
             }
+
+        function AddToCart(ItemName, ItemPrice, ItemImageLink) {
+            var Count = parseInt(document.getElementById("cart__item_count").innerHTML);
+            Count = Count + 1;
+            document.getElementById("cart__item_count").innerHTML = Count;
+            document.getElementsByClassName("cart_section")[0].style.width = "300px";
+            var ItemWraper = `<aside class="Item_wraper"><img src="${ItemImageLink}" style="width: 85px;" alt=""><div class="Item_cart_details"><p id="item_name">${ItemName}</p><p id="item_price">${ItemPrice}</p></div><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi-trash3" viewBox="0 0 16 16"><path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/></svg></aside>`;
+            document.getElementsByClassName("ProsuctInCartSection")[0].insertAdjacentHTML('beforeend', ItemWraper);
+        }
         
     </script>
     <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>

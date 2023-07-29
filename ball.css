@@ -207,18 +207,19 @@ nav {
     display: grid;
     place-items: center;
 }
-.cart_wraper:before {
-    content: '0';
-    width: 15px;
+.cart__item_count {
+    width: 13px;
+    padding: 2px;
     right: 0;
     top: 0;
-    height: 15px;
+    height: 13px;
     border-radius: 50%;
     background-color: #ededed;
     font-size: 11px;
     position: absolute;
     display: grid;
     place-items: center;
+    box-sizing: content-box;
 }
 .icons_header {
     box-sizing: content-box;
@@ -243,6 +244,63 @@ nav {
     opacity: 0;
     visibility: hidden;
 }
+.cart_section {
+    width: 0px;
+    height: calc(100vh - 60px);
+    position: fixed;
+    right: 0;
+    top: 60px;
+    background-color: white;
+    z-index: 129784;
+    box-shadow: 3px 8px 10px #adadad;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+.cart_section_menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 7px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.cart_section_menu > h1 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #0c1524;
+}
+.ProsuctInCartSection{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.Item_wraper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.Item_cart_details {
+    width: 180px;
+}
+#item_name {
+    font-size: 12px;
+}
+#item_price {
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+.bi-trash3 {
+    box-sizing: content-box;
+    padding: 5px;
+    fill: red;
+}
+
+
 .banner {
     width: 100%;
     height: 100vh; 
@@ -490,7 +548,7 @@ nav {
     width: 100%;
     display: grid;
     place-items: center;
-    background: linear-gradient(to top, #E5E4E2, white);
+    background: linear-gradient(to top, whitesmoke, white);
     padding: 40px 12.5px 0px 12.5px;
 }
 .basketballs {
@@ -547,7 +605,11 @@ nav {
     gap: 10px;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 100;
+    pointer-events: all;
+}
+.shop_buttons > p {
+    transition: all 0.2s ease-in-out;
 }
 .Up_coming_item {
     background: url(./images/basketballs/Other_SHirt.jpg);
@@ -952,6 +1014,9 @@ nav {
     .reviews_gallery_wraper {
         grid-template-columns: repeat(2, 290px);
     }
+    .button_wraper {
+        opacity: 1 !important;
+    }
 }
 @media only screen and (max-width: 600px) {
     .products_section {
@@ -983,23 +1048,10 @@ nav {
     }
 }
 
-
-
-
-
-
-
 *::selection {
     background: #adadad;
     backdrop-filter: invert(20%);
 }
-
-
-
-
-
-
-
 @media only screen and (max-width: 1078px) {
     .footer_contact_section {
         width: 97%;
@@ -1037,75 +1089,6 @@ nav {
         padding-left: 25px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  .product_box {
     overflow: hidden;
     justify-content: center;
@@ -1115,11 +1098,11 @@ nav {
  }
  .product_box::before {
     content: '';
-    width: 200%;
+    width: 190%;
     height: 40%;
     background: #f12711;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711,#0c1524 , #77A1D3, #E684AE);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711, #0c1524, #77A1D3, #E684AE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     position: absolute;
     z-index: 2;

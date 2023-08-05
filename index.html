@@ -74,7 +74,7 @@
               <h1>Cart</h1>
               <div style="width: 24px; height: 24px;"></div>
         </div>
-        <div class="ProsuctInCartSection"></div>
+        <div class="ProsuctInCartSection"><p id="empty_cart_text" style="width: 100%; font-size: 12px; color: grey; margin-top: 10px; text-align: center;">Your cart is currently empty...</p></div>
         
         <div style="display: flex; flex-direction: column; width: 100%;">
             <button class="MoveToCheckout">Move to checkout</button>
@@ -535,7 +535,6 @@
 
 
 
-
             <aside class="product_box Shoes" onmouseover="hover_product('Air-Jordan')" onmouseout="unhover_product('Air-Jordan')">
                 <div class="product_box_wraper">
                     <div class="product_box_image">
@@ -552,6 +551,50 @@
                     </div>
                 </div>
             </aside>
+
+
+            
+            <aside class="product_box Shoes" onmouseover="hover_product('Jordan Why Not .6')" onmouseout="unhover_product('Jordan Why Not .6')">
+                <div class="product_box_wraper">
+                    <div class="product_box_image">
+                            <img src="./images/basketballs/jordan-why-not-6-shoes-ktVmbx-removebg-preview.png" style="width: 100%;" alt="">
+                        </div>
+                        <div class="product_info_wraper">
+                            <p id="product_heading" class="product_heading">Jordan Why Not .6</p>
+                            <p id="product_price" class="product_price" style="font-weight: bold;">199.99 <span style="text-decoration: line-through; font-weight: 400;">249.99$</span></p>
+                        </div>
+                        <div class="product_box_buttons_wraper" id="Jordan Why Not .6">
+                            <button class="shop_buttons" onclick="AddToCart('Jordan Why Not .6', '199.99', './images/basketballs/jordan-why-not-6-shoes-ktVmbx-removebg-preview.png')">
+                                <p>Add to cart</p> 
+                            </button>
+                        </div>
+                </div>
+            </aside>
+
+            <aside class="product_box Nike_box">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike Logo">
+                </a>
+                
+                <a href="https://www.nike.com/jordan" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png" alt="Jordan Brand Logo">
+                </a>
+                
+                <a href="https://www.adidas.com/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Adidas_isologo.svg/800px-Adidas_isologo.svg.png" alt="Adidas Logo">
+                </a>
+                
+                <a href="https://www.wilson.com/" target="_blank">
+                    <img src="./png-transparent-wilson-sporting-goods-baseball-glove-baseball-text-sport-logo-thumbnail-removebg-preview.png" alt="Wilson Logo">
+                </a>
+                
+                <a href="https://www.underarmour.com/" target="_blank">
+                    <img src="https://loodibee.com/wp-content/uploads/Under-Armour-Emblem-300x300.png" alt="Under Armour Logo">
+                </a>
+            </aside>
+
+
+
 
 
         </section>
@@ -641,7 +684,7 @@
             <ul class="email_phone_number ul_footer">
               <label class="phone_flex_email">                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill image_phone_email email_and_phone" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-              </svg>+1-543-123-4567</label>
+              </svg>(+972) 50-811-4195</label>
               <label class="phone_flex_email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at image_phone_email email_and_phone" viewBox="0 0 16 16">
                 <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
                 <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
@@ -668,7 +711,7 @@
           </ul>
         </section>
         <div style="width: 94%; text-align: center; color: #ededed; position: absolute; bottom: 10px; left: 0;">
-            <p>&copy; 2023 Driballx. All rights reserved. | <a href="#">Terms of Service</a></p>
+            <p>&copy; 2023 Driballx. All rights reserved.</p>
         </div>
       </footer>
 
@@ -845,6 +888,9 @@
             TotalPrice += parseFloat(ItemPrice);
             document.getElementById("price").innerHTML = parseFloat(TotalPrice).toFixed(2) + "$";
 
+            document.getElementById("empty_cart_text").style.display = "none";
+
+
         }
         function RemoveItem(ItemIndex, MinusItemPrice) {
             var list = document.getElementsByClassName("ProsuctInCartSection")[0];
@@ -855,19 +901,20 @@
             
             for (let i=0;i<document.getElementsByClassName("Item_wraper").length; i++) {
                 if (parseInt(document.getElementsByClassName("Item_wraper")[i].id) === parseInt(ItemIndex)) {
-                    document.getElementsByClassName("Item_wraper")[i].style.transform = "translateX(-100%)";
-                    setTimeout(function () {list.removeChild(document.getElementsByClassName("Item_wraper")[i]); }, 1000);
+                    setTimeout(function () {list.removeChild(document.getElementsByClassName("Item_wraper")[i]); }, 0);
+
+                    TotalPrice -= parseFloat(MinusItemPrice);
+
                     break;
                 }    
             }
-
-            TotalPrice -= parseFloat(MinusItemPrice);
-            document.getElementById("price").innerHTML = TotalPrice + "$";
-            if (parseInt(document.getElementsByClassName("Item_wraper").length) === 0) {
-                document.getElementById("price").innerHTML = "0.00$";
-            } else {
-                document.getElementById("price").innerHTML = parseFloat(TotalPrice).toFixed(2) + "$";
-            }
+                if (parseInt(document.getElementsByClassName("Item_wraper").length) === 1) {
+                    document.getElementById("price").innerHTML = "0.00$";
+                    document.getElementById("empty_cart_text").style.display = "block";
+                } else {
+                    document.getElementById("price").innerHTML = parseFloat(TotalPrice).toFixed(2) + "$";
+                }
+            
         }
     </script>
     <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>

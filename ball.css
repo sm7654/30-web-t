@@ -583,27 +583,15 @@ nav {
     justify-content: center;
     gap: 33px;
 }
-.product_box {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 0px 0px 6px 0px;
-    box-sizing: content-box;
-    overflow: hidden;
-}
 .product_box:hover {
     box-shadow: 0px 0px 10px grey;
     
 }
 .product_box_image {
-    width: 100%;
-    height: 100%      ;
     display: grid;
     place-items: center;
     background: linear-gradient(to top, whitesmoke, white);
-    padding: 10px 0px;
+    padding: 10px 5px;
 }
 .basketballs {
     width: 225px;
@@ -627,20 +615,33 @@ nav {
 .product_box_buttons_wraper {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 4px;
     justify-content: space-between;
     position: relative;
-    margin-top: 7px;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     pointer-events: none;
+}
+._buy_now_wraper {
+    width: 40%;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    pointer-events: all;
+}
+.buy_now_icon {
+    fill: #0c1524;
 }
 .sizes_wraper {
     width: 100%;
     display: flex;
     gap: 10px;
     padding: 0px 3%;
+    margin-top: 7px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    margin-bottom: 5px;
 }
 .sizes_wraper > p {
     text-align: center;
@@ -650,11 +651,11 @@ nav {
 }
 .shop_buttons {
     cursor: pointer;
-    background: #0c1524;
-    color: white;
+    background: white;
+    color: #0c1524;
     border: none;
     padding: 15px;
-    width: 100%;
+    width: 80%;
     border: 1px solid #0c1524;
     display: flex;
     gap: 10px;
@@ -1015,29 +1016,35 @@ nav {
 }
 .product_box {
     overflow: hidden;
-    justify-content: center;
     align-items: center;
     position: relative;
     padding: 5px;
- }
+    align-content: space-between;
+    justify-content: center;
+    height: auto;
+    display: flex; 
+    cursor: pointer;
+    box-sizing: content-box;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+}
  .product_box::before {
     content: '';
-    width: 190%;
-    height: 40%;
+    width: 200%;
+    height: 50%;
     background: #f12711;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711,#0c1524 , #77A1D3, #E684AE);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f5af19, #f12711, #0c1524, #77A1D3, #E684AE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(#0c1524, white);
     position: absolute;
     z-index: 2;
-    display: none;
+    display: block;
+    opacity: 0;
  }
  .product_box:hover::before{
     animation: rotate 3s linear infinite;
-    display: block;
+    opacity: 1;
 }
 .product_box:hover {
-    box-shadow: 0px 0px 20px #E5E4E2;
+    box-shadow: 0px 0px 10px darkgray;
 }
 
  @keyframes rotate {
@@ -1083,8 +1090,8 @@ nav {
 }
 .Nike_box::before {
     content: '';
-    height: 110%;
-    width: 100px;
+    height: 150%;
+    width: 150px;
     background: linear-gradient(to left, transparent, white, transparent);
     position: absolute;
     rotate: 45deg;

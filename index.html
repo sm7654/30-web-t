@@ -21,8 +21,8 @@
                 <div class="cart_wraper" onclick="document.getElementsByClassName('cart_section')[0].style.width = '300px';" style="cursor: pointer;">
                     <div class="cart__item_count" id="cart__item_count">0</div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi icons_header" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                    </svg>
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
                 </div>
 
             </ul>
@@ -335,7 +335,7 @@
 
 
         <section id="collection" class="products_section">
-            <aside class="product_box Shirts" onmouseover="hover_product('Boston_t_shirt')" onmouseout="unhover_product('Boston_t_shirt')" id="First-Item">
+            <aside class="product_box Shirts" onmouseover="hover_product('Boston_t_shirt');  document.getElementById('Boston_sizes').style.opacity = 1;" onmouseout="unhover_product('Boston_t_shirt');  document.getElementById('Boston_sizes').style.opacity = 0;" id="First-Item">
                 <div class="product_box_wraper">
                     <div class="product_box_image">
                         <img src="./images/teams logos/2.png" style="width: 100%;" alt="">
@@ -344,23 +344,29 @@
                         <p id="product_heading" class="product_heading">Boston T-shirt</p>
                         <p id="product_price" class="product_price" style="font-weight: bold;">39.99$ <span style="text-decoration: line-through; font-weight: 400;">59.99$</span></p>
                     </div>
-                    <div class="product_box_buttons_wraper" id="Boston_t_shirt">
-                        <div class="sizes_wraper">
+                    <wraper>
+                        <div class="sizes_wraper" id="Boston_sizes">
                             <p>XS</p>
                             <p>S</p>
                             <p>M</p>
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons" onclick="AddToCart('Boston T-shirt', '39.99', './images/teams logos/2.png')">
-                            <p>Add to cart</p> 
-
-                        </button>
-                    </div>
+                        <div class="product_box_buttons_wraper" id="Boston_t_shirt">
+                            <div class="_buy_now_wraper"onclick="AddToCart('Boston T-shirt', '39.99', './images/teams logos/2.png')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <button class="shop_buttons">
+                                <p>buy now</p> 
+                            </button>
+                        </div>
+                    </wraper>
                 </div>
             </aside>
 
-            <aside class="product_box Shirts" onmouseover="hover_product('SLOVENIJA-T-shirt')" onmouseout="unhover_product('SLOVENIJA-T-shirt')">
+            <aside class="product_box Shirts" onmouseover="hover_product('SLOVENIJA-T-shirt'); document.getElementById('Slove_sizes').style.opacity = 1;" onmouseout="unhover_product('SLOVENIJA-T-shirt');  document.getElementById('Slove_sizes').style.opacity = 0;">
                 <div class="product_box_wraper">
                     <div class="product_box_image">
                         <img src="./images/teams logos/1.png" style="width: 100%;" alt="">
@@ -369,22 +375,29 @@
                         <p id="product_heading" class="product_heading">SLOVENIJA T-shirt</p>
                         <p id="product_price" class="product_price" style="font-weight: bold;">39.99$</p>
                     </div>
-                    <div class="product_box_buttons_wraper" id="SLOVENIJA-T-shirt">
-                        <div class="sizes_wraper">
+                    <wraper>
+                        <div class="sizes_wraper" id="Slove_sizes">
                             <p>XS</p>
                             <p>S</p>
                             <p>M</p>
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons" onclick="AddToCart('SLOVENIJA T-shirt', '39.99', './images/teams logos/1.png')">
-                            <p>Add to cart</p> 
-                        </button>
-                    </div>
+                        <div class="product_box_buttons_wraper" id="SLOVENIJA-T-shirt">
+                            <div class="_buy_now_wraper" onclick="AddToCart('SLOVENIJA T-shirt', '39.99', './images/teams logos/1.png')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <button class="shop_buttons">
+                                <p>buy now</p> 
+                            </button>
+                        </div>
+                    </wraper>
                 </div>
             </aside>
 
-            <aside class="product_box Shirts" onmouseover="hover_product('Bulls-tshirt')" onmouseout="unhover_product('Bulls-tshirt')">
+            <aside class="product_box Shirts" onmouseover="hover_product('Bulls-tshirt'); document.getElementById('Bulls_sizes').style.opacity = 1;" onmouseout="unhover_product('Bulls-tshirt'); document.getElementById('Bulls_sizes').style.opacity = 0;">
                 <div class="product_box_wraper">
                     <div class="product_box_image">
                         <img src="./images/teams logos/3.png" style="width: 100%;" alt="">
@@ -393,22 +406,29 @@
                         <p id="product_heading" class="product_heading">CHICAGO bulls T-shirt</p>
                         <p id="product_price" class="product_price" style="font-weight: bold;">39.99$ <span style="text-decoration: line-through; font-weight: 400;">59.99$</span></p>
                     </div>
-                    <div class="product_box_buttons_wraper" id="Bulls-tshirt">
-                        <div class="sizes_wraper">
+                    <wraper>
+                        <div class="sizes_wraper" id="Bulls_sizes">
                             <p>XS</p>
                             <p>S</p>
                             <p>M</p>
                             <p>L</p>
                             <p>XL</p>
                         </div>
-                        <button class="shop_buttons" onclick="AddToCart('CHICAGO bulls T-shirt', '39.99', './images/teams logos/3.png')">
-                            <p>Add to cart</p> 
-                        </button>
-                    </div>
+                        <div class="product_box_buttons_wraper" id="Bulls-tshirt">
+                            <div class="_buy_now_wraper" onclick="AddToCart('CHICAGO bulls T-shirt', '39.99', './images/teams logos/3.png')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <button class="shop_buttons">
+                                <p>buy now</p> 
+                            </button>
+                        </div>
+                    </wraper>
                 </div>
             </aside>
 
-            <aside class="product_box Shirts" onmouseover="hover_product('LA-Tshirt')" onmouseout="unhover_product('LA-Tshirt')">
+            <aside class="product_box Shirts" onmouseover="hover_product('LA-Tshirt'); document.getElementById('lakers_sizes').style.opacity = 1;" onmouseout="unhover_product('LA-Tshirt'); document.getElementById('lakers_sizes').style.opacity = 0;">
                 <div class="product_box_wraper">
                     <div class="product_box_image">
                             <img src="./images/teams logos/4.png" style="width: 100%;" alt="">
@@ -417,17 +437,24 @@
                             <p id="product_heading" class="product_heading">Los-Angeles LAKERS T-shirt</p>
                             <p id="product_price" class="product_price" style="font-weight: bold;">39.99$ <span style="text-decoration: line-through; font-weight: 400;">59.99$</span></p>
                         </div>
-                        <div class="product_box_buttons_wraper" id="LA-Tshirt">
-                            <div class="sizes_wraper">
+                        <wraper>
+                            <div class="sizes_wraper" id="lakers_sizes">
                                 <p>S</p>
                                 <p>M</p>
                                 <p>L</p>
                                 <p>XL</p>
                             </div>
-                            <button class="shop_buttons" onclick="AddToCart('Los-Angeles LAKERS T-shirt', '39.99', './images/teams logos/4.png')">
-                                <p>Add to cart</p> 
-                            </button>
-                        </div>
+                            <div class="product_box_buttons_wraper" id="LA-Tshirt">
+                                <div class="_buy_now_wraper" onclick="AddToCart('Los-Angeles LAKERS T-shirt', '39.99', './images/teams logos/4.png')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                    </svg>
+                                </div>
+                                <button class="shop_buttons">
+                                    <p>buy now</p> 
+                                </button>
+                            </div>
+                        </wraper>
                 </div>
             </aside>
 
@@ -447,8 +474,13 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">29.99$ <span style="text-decoration: line-through; font-weight: 400;">39.99$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-Standard-8P">
-                        <button class="shop_buttons" onclick="AddToCart('Wilson NBA Atlanta Hawks Trae Young Mini Basketball', '29.99', './images/basketballs/1.png')" >
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper" onclick="AddToCart('Wilson NBA Atlanta Hawks Trae Young Mini Basketball', '29.99', './images/basketballs/1.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -471,8 +503,13 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">29.99$ <span style="text-decoration: line-through; font-weight: 400;">39.99$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Wilson-WNBA-Heir">
-                        <button class="shop_buttons" onclick="AddToCart('Wilson WNBA Heir DNA basketball', '29.99', './images/basketballs/7.png')">
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper" onclick="AddToCart('Wilson WNBA Heir DNA basketball', '29.99', './images/basketballs/7.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -488,8 +525,13 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">39.99$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-Next-Nature">
-                        <button class="shop_buttons" onclick="AddToCart('Nike Skills Next Nature basketball', '39.99', './images/basketballs/3.png')">
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper"  onclick="AddToCart('Nike Skills Next Nature basketball', '39.99', './images/basketballs/3.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -505,8 +547,13 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">37.50$ <span style="text-decoration: line-through; font-weight: 400;">49.99$</span></p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Nike-lebron">
-                        <button class="shop_buttons" onclick="AddToCart('Nike All-Court 2.0 LeBron James basketball', '37.50', './images/basketballs/5.png')">
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper"  onclick="AddToCart('Nike All-Court 2.0 LeBron James basketball', '37.50', './images/basketballs/5.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -520,11 +567,16 @@
                     </div>
                     <div class="product_info_wraper">
                         <p id="product_heading" class="product_heading">Basketball stand</p>
-                        <p id="product_price" class="product_price" style="font-weight: bold;">5.00$</p>
+                        <p id="product_price" class="product_price" style="font-weight: bold;">7.99$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Basketball-stand">
-                        <button class="shop_buttons" onclick="AddToCart('Basketball stand', '5.00', './images/basketballs/basket-ball_stad.png')">
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper"  onclick="AddToCart('Basketball stand', '7.99', './images/basketballs/basket-ball_stad.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -545,8 +597,13 @@
                         <p id="product_price" class="product_price" style="font-weight: bold;">200.00$</p>
                     </div>
                     <div class="product_box_buttons_wraper" id="Air-Jordan">
-                        <button class="shop_buttons" onclick="AddToCart('Air Jordan', '200.00', './images/shoe-1.png')">
-                            <p>Add to cart</p> 
+                        <div class="_buy_now_wraper"  onclick="AddToCart('Air Jordan', '200.00', './images/shoe-1.png')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </div>
+                        <button class="shop_buttons">
+                            <p>buy now</p> 
                         </button>
                     </div>
                 </div>
@@ -561,11 +618,40 @@
                         </div>
                         <div class="product_info_wraper">
                             <p id="product_heading" class="product_heading">Jordan Why Not .6</p>
-                            <p id="product_price" class="product_price" style="font-weight: bold;">199.99 <span style="text-decoration: line-through; font-weight: 400;">249.99$</span></p>
+                            <p id="product_price" class="product_price" style="font-weight: bold;">399.99$ <span style="text-decoration: line-through; font-weight: 400;">449.99$</span></p>
                         </div>
                         <div class="product_box_buttons_wraper" id="Jordan Why Not .6">
-                            <button class="shop_buttons" onclick="AddToCart('Jordan Why Not .6', '199.99', './images/basketballs/jordan-why-not-6-shoes-ktVmbx-removebg-preview.png')">
-                                <p>Add to cart</p> 
+                            <div class="_buy_now_wraper"  onclick="AddToCart('Jordan Why Not .6', '199.99', './images/basketballs/jordan-why-not-6-shoes-ktVmbx-removebg-preview.png')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <button class="shop_buttons">
+                                <p>buy now</p> 
+                            </button>
+                        </div>
+                </div>
+            </aside>
+
+
+
+            <aside class="product_box Shoes" onmouseover="hover_product('Tatum 1 Barbershop')" onmouseout="unhover_product('Tatum 1 Barbershop')">
+                <div class="product_box_wraper">
+                    <div class="product_box_image">
+                            <img src="./images/shoes_good.png" style="width: 100%;" alt="">
+                        </div>
+                        <div class="product_info_wraper">
+                            <p id="product_heading" class="product_heading">Tatum 1 Barbershop</p>
+                            <p id="product_price" class="product_price" style="font-weight: bold;">399.99$</span></p>
+                        </div>
+                        <div class="product_box_buttons_wraper" id="Tatum 1 Barbershop">
+                            <div class="_buy_now_wraper"  onclick="AddToCart('Tatum 1 Barbershop', '399.99', './images/shoes_good.png')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" id="icons_header" class="bi buy_now" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <button class="shop_buttons">
+                                <p>buy now</p> 
                             </button>
                         </div>
                 </div>
@@ -915,6 +1001,14 @@
                     document.getElementById("price").innerHTML = parseFloat(TotalPrice).toFixed(2) + "$";
                 }
             
+        }
+        var height_image = document.getElementsByClassName("product_box_image")[0].style.height;
+        for (let i=0; i<document.getElementsByClassName("product_box_image").length; i++) {
+            document.getElementsByClassName("product_box_image")[i].style.height = height_image;
+        }
+        var buy_now_height = document.getElementsByClassName("shop_buttons")[0].style.height;
+        for (let i=0; i<document.getElementsByClassName("_buy_now_wraper").length; i++) {
+            document.getElementsByClassName("_buy_now_wraper")[i].style.height = buy_now_height;
         }
     </script>
     <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>

@@ -37,10 +37,10 @@ body {
     position: relative;
 }
 .responsive_menu {
-    width: 100%;
-    height: 0%;
+    width: 0%;
+    height: calc(100vh - 60px);
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     top: 60px;
     right: 0;
     z-index: 99;
@@ -48,8 +48,7 @@ body {
     transition: all 0.55s ease-in-out;
 }
 .scale_x {
-    width: 100% !important;
-    height: 350px !important;
+    width: 60% !important;
 }
 .backdrop {
     position: absolute;
@@ -68,6 +67,13 @@ body {
 .ul_responsive_wraper {
     width: 100%;
     height: 100%;
+}
+.text_res_menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
 }
 .Heading__ul_res {
     color: #adadad; 
@@ -88,9 +94,6 @@ body {
     text-align: center;
     padding: 3% 0px;
     text-decoration: none;
-}
-.li_info:nth-child(1) {
-    border-top: #E5E4E2 1px solid;
 }
 .login_button_res {
     padding: 7px 22px;
@@ -581,7 +584,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(5, 18%);
     justify-content: center;
-    gap: 33px;
+    gap: 30px;
+    justify-items: center;
 }
 .product_box:hover {
     box-shadow: 0px 0px 10px grey;
@@ -615,7 +619,7 @@ nav {
 .product_box_buttons_wraper {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 4px;
     justify-content: space-between;
     position: relative;
@@ -664,6 +668,11 @@ nav {
     z-index: 100;
     pointer-events: all;
 }
+.shop_buttons:hover {
+    background-color: #0c1524;
+    color: white;
+    border-color: white;
+}
 .shop_buttons > p {
     transition: all 0.2s ease-in-out;
 }
@@ -674,8 +683,9 @@ nav {
     position: relative;
     justify-content: end !important;
     gap: 20px !important;
-    padding: 0px 0px 20px 0px !important;
+    padding: 0px 5px 10px 5px !important;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     height: auto;
     border: none;
@@ -701,6 +711,7 @@ nav {
     z-index: 5;
     background: black;
     border:  1px solid black;
+    color: white;
 }
 .Up_coming_item > button:hover {
     border: 1px solid transparent;
@@ -1087,6 +1098,8 @@ nav {
     flex-wrap: wrap;
     gap: 10%;
     position: relative;
+    box-shadow: none !important;
+    height: fit-content !important;
 }
 .Nike_box::before {
     content: '';
@@ -1136,7 +1149,7 @@ box-shadow: none;
     }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
     .banner {
         padding: 10%;
     }
@@ -1156,8 +1169,20 @@ box-shadow: none;
         border-radius: 30px;
     }
     .products_section {
-        gap: 20px;
-        grid-template-columns: repeat(3, 30%);
+        justify-content: space-around;
+        grid-template-columns: repeat(4, 22%);
+    }
+    .product_box_buttons_wraper {
+        opacity: 1;
+    }
+    .sizes_wraper {
+        opacity: 1;
+    }
+    .product_box_wraper {
+        gap: 15px;
+    }
+    .product_box {
+        box-shadow: 0px 0px 10px #E5E4E2;
     }
     .product_heading {
         font-size: 16px;
@@ -1188,6 +1213,13 @@ box-shadow: none;
     }
 
 }
+@media only screen and (max-width: 900px) {
+    .products_section {
+        grid-template-columns: repeat(3, 28%);
+        justify-content: space-around;
+        row-gap: 40px;
+    }
+}
 @media only screen and (max-width: 600px) {
     .products_section {
         gap: 30px;
@@ -1202,6 +1234,9 @@ box-shadow: none;
     }
     .reviews_gallery_wraper {
         grid-template-columns: repeat(1, 280px);
+    }
+    .Nike_box>a {
+        width: 11%;
     }
 }
 @media only screen and (max-width: 475px){

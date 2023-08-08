@@ -72,6 +72,9 @@ body {
 .Heading__ul_res {
     color: #adadad; 
 }
+.res_res {
+    display: none;
+}
 .ul_responsive {
     width: 100%;
     height: 100%;
@@ -79,6 +82,13 @@ body {
     flex-direction: column;
     gap: 1%;
     justify-content: space-between;
+}
+.res_links_wraper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 .li_responsive {
     width: 100%;
@@ -110,8 +120,8 @@ body {
 }
 .bi {
     fill: black;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
 }
 header {
     width: 100%;
@@ -143,30 +153,12 @@ nav {
     cursor: pointer;
     display: none;
     pointer-events: none;
+    align-items: flex-start;
     padding: 10px;
+    padding-right: 0px;
     box-sizing: content-box;
     background: transparent;
     border: none;
-}
-.bars {
-    width: 100%;
-    height: 3px;
-    border-radius: 30px;
-    background-color: #f45029;
-    transition: left 0.3s ease-in-out;
-}
-#bar_2 {
-    width: 75%;
-    align-self: flex-end;
-    position: relative;
-}
-#bar_3 {
-    width: 50%;
-    align-self: flex-end;
-    position: relative;
-}
-.active {
-    align-self: flex-start !important;
 }
 .ul_header {
     height: 100%;
@@ -200,6 +192,30 @@ nav {
 .li_header:hover::after {
     width: 100%;
     height: 2px;
+}
+.login_cart_wraper {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+}
+.login_cart_wraper_res {
+    display: none;
+    gap: 5px;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+}
+.log_in_wraper {
+    display: grid;
+    place-items: center;
+}
+.log_in {
+    padding: 10px;
+}
+.log_in::after {
+    display: none;
 }
 .cart_wraper {
     position: relative;
@@ -626,20 +642,20 @@ nav {
 }
 ._buy_now_wraper {
     width: 40%;
-    background-color: white;
+    background-color: #0c1524;
     display: grid;
     place-items: center;
     pointer-events: all;
 }
-.buy_now_icon {
-    fill: #0c1524;
+.buy_now {
+    fill: white;
 }
 .sizes_wraper {
     width: 100%;
     display: flex;
     gap: 10px;
     padding: 0px 3%;
-    margin-top: 7px;
+    margin-top: 0px;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     margin-bottom: 5px;
@@ -655,7 +671,7 @@ nav {
     background: white;
     color: #0c1524;
     border: none;
-    padding: 15px;
+    padding: 6%;
     width: 80%;
     border: 1px solid #0c1524;
     display: flex;
@@ -1041,7 +1057,8 @@ nav {
     width: 200%;
     height: 50%;
     background: #f12711;  /* fallback for old browsers */
-    background: linear-gradient(#0c1524, white);
+    background: linear-gradient(#FF0000 ,#0c1524, white);
+    
     position: absolute;
     z-index: 2;
     display: block;
@@ -1188,13 +1205,34 @@ box-shadow: none;
     .product_price {
         font-size: 9px;
     }
+    nav {
+        width: 100%;
+        flex-direction: row-reverse;
+        padding: 0px 10px;
+    }
     .ul_header {
         display: none;
         pointer-events: none;
     }
     .bars-wraper {
+        width: calc(100%/3);
         display: flex;
         pointer-events: all;
+        padding: 10px 0px;
+    }
+    .login_cart_wraper_res {
+        width: calc(100%/3);
+        display: flex;
+        gap: 5px;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+    }
+    .logo_wraper {
+        width: calc(100%/3);
+        display: grid;
+        place-items: center;
     }
     .sizes_wraper > p {
         font-size: 10px;
@@ -1221,6 +1259,7 @@ box-shadow: none;
     .products_section {
         gap: 30px;
         grid-template-columns: repeat(2, 45%);
+        justify-content: center;
     }
     .input_and_title_wraper, .selection, .button_wraper {
         width: 90%;
@@ -1281,6 +1320,10 @@ box-shadow: none;
     }
     .Nike_box>a  {
         width: 13%;
+    }
+    .products_section {
+        row-gap: 30px;
+        grid-template-columns: repeat(2, 42%);
     }
 }
 @media only screen and (max-width: 405px) {

@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./images/icon-logo.png">
+    <title>Driballx - Login/Register</title>
     <link rel="stylesheet" href="./ball.css">
     <style style="display: block; position: absolute; top: 0;">
         body {
-             width: 100%;
-             height: 100vh;
-             display: grid;
-             place-items: center;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        header {
+          width: 30%;
+          height: 60px;
+          padding: 10px 30px;
+          display: grid;
+          place-items: center;
+          position: relative;
+        }
+        header> a > img {
+          width: 200px;
         }
         .cards_section {
-            width: 50%;
-            height: 70%;
+            width: 70%;
+            height: 100%;
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
         }
         .box {
-            width: 100%;
-            height: 89%;
+            width: 550px;
             border: 1px solid white;
             position: absolute;
             transition: all 0.2s;
@@ -35,23 +49,24 @@
             padding-bottom: 15px;
         }
         .back_element_style {
-            width: 95%;
+            width: 520px;
             border-radius: 10px;
             z-index: 1;
-            top: 0px;
             cursor: pointer;
             box-shadow: 0px 0px 30px #ededed;
             opacity: 0.5;
+            height: 560px;
             border: 1px groove whitesmoke;
         }
         .back_element_style:hover {
-            top: -20px;
+            margin-bottom: 30px;
         }
         .front_element_style {
             box-shadow: 0px 2px 10px #ededed;
             z-index: 2;
-            bottom: 0;
+            height: 500px;
             opacity: 1;
+            margin-bottom: -60px;
         }
         .login-card {
             border-radius: 10px;
@@ -68,6 +83,7 @@
 
         .login-form {
             margin-top: 20px;
+            margin-bottom: 30px;
         }
 
         .input-icon {
@@ -102,115 +118,178 @@
             box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
         }
         .register-card {
-    border-radius: 10px;
-    padding: 20px;
-    width: 60%;
-    text-align: center;
-  }
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            text-align: center;
+          }
 
-  .register-icon {
-    font-size: 48px;
-    color: #0c1524;
-  }
+          .register-icon {
+            font-size: 48px;
+            color: #0c1524;
+          }
 
-  .register-form {
-    margin-top: 20px;
-  }
+          .register-form {
+            margin-top: 20px;
+          }
 
-  .input-icon {
-    position: absolute;
-    padding: 15px;
-    color: #95a5a6;
-  }
+          .input-icon {
+            position: absolute;
+            padding: 15px;
+            color: #95a5a6;
+            z-index: 4;
+          }
 
-  .input-field {
-    width: 100%;
-    padding: 15px;
-    padding-left: 45px;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .register-button {
-            background-color: #0c1524;
-            color: white;
-            border: 2px solid #0c1524;
+          .input-field {
+            width: 100%;
+            padding: 15px;
+            padding-left: 45px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+          }
+          .register-button {
+              background-color: #0c1524;
+              color: white;
+              border: 2px solid #0c1524;
+              border: none;
+              border-radius: 5px;
+              padding: 10px 20px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+          }
+
+          .register-button:hover {
+              background-color: white;
+              color: #0c1524;
+              box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
+          }
+          .login-option {
+            margin-top: 10px;
+          }
+
+          .auth-icon {
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+            color: #0c1524;
+          }
+
+          .auth-button {
+            color: #0c1524;
+            background-color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 5px 10px;
             cursor: pointer;
+            width: 70%;
             transition: background-color 0.3s ease;
+            box-shadow: rgba(0, 0, 0, 0.105) 0px 5px 5px 0px;
+
+          }
+        .google-button {
+            margin-top: 10px;
+        }
+          .auth-button:hover {
+            opacity: 0.9;
+          }
+          .or {
+            width: 100%;
+            background-color: #f45029;
+            height: 2px;
+            position: relative;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+          }
+          .or > p {
+            background: white;
+            top: -500%;
+            position: absolute;
+            padding: 0px 20px;
         }
 
-        .register-button:hover {
-            background-color: white;
-            color: #0c1524;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
-        }
-        .login-option {
-    margin-top: 10px;
-  }
-
-  .auth-icon {
-    font-size: 20px;
-    vertical-align: middle;
-    margin-right: 10px;
-    color: #0c1524;
-  }
-
-  .auth-button {
-    color: #0c1524;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    width: 70%;
-    transition: background-color 0.3s ease;
-    box-shadow: rgba(0, 0, 0, 0.105) 0px 5px 5px 0px;
-
-  }
-.google-button {
-    margin-top: 10px;
-}
-  .auth-button:hover {
-    opacity: 0.9;
-  }
-  .or {
-    width: 100%;
-    background-color: #f45029;
-    height: 2px;
-    position: relative;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-  }
-  .or > p {
-    background: white;
-    top: -500%;
-    position: absolute;
-    padding: 0px 20px;
-}
-
-        @media only screen and (max-width: 900px){
+        @media only screen and (max-width: 970px){
             .cards_section {
                 width: 70%;
             } 
+            .login-card {
+              width: 70%;
+            }
+            .register-card {
+              width: 70%;
+            } 
+        }
+        @media only screen and (max-width: 900px){
+          body {
+            flex-direction: column;
+          }
+          .cards_section {
+            background: white;
+          }
         }
         @media only screen and (max-width: 700px){
             .cards_section {
                 width: 80%;
+            }
+            .box {
+              width: 450px;
+            }
+            .back_element_style {
+              width: 400px;
+            }
+            .login-card {
+              width: 80%;
+            }
+            .register-card {
+              width: 80%;
             } 
         }
         @media only screen and (max-width: 500px){
             .cards_section {
                 width: 95%;
             }
+            .login-card {
+              width: 95%;
+            }
+            .register-card {
+              width: 95%;
+            } 
+            .box {
+              width: 370px;
+            }
+            .back_element_style {
+              width: 320px;
+            }
         } 
+        @media only screen and (max-width: 450px){
+            .box {
+              width: 320px;
+            }
+            .back_element_style {
+              width: 270px;
+            }
+        } 
+
+
+
+        .invalid {
+            outline: none;
+            border: 1px solid #FF0000;
+            border-radius: 5px;
+        }
+        .valid {
+            outline: none;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+  <header>
+    <a href="./index.html"><img src="./images/logo_res.png" alt=""></a>
+  </header>
     <section class="cards_section">
         <div class="back_element_style box" id="back_box" onclick="change_class(this.id)">
             <h2>Register</h2>
@@ -245,7 +324,7 @@
                 <div class="input-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
-                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="email" class="input-field" id="email_input" placeholder="Email" required>
                 <div class="input-icon">
                   <i class="fas fa-lock"></i>
                 </div>
@@ -272,6 +351,78 @@
     </section>
 
     <script>
+
+const invalidCharacters = [
+    " ",
+    "!",
+    "#",
+    "$",
+    "%",
+    "&",
+    "'",
+    "*",
+    "+",
+    "=",
+    ",",
+    "/",
+    ":",
+    ";",
+    "<",
+    ">",
+    "?",
+    "[",
+    "]",
+    "\\",
+    "^",
+    "`",
+    "{",
+    "}",
+    "|",
+    "~",
+    '"',
+    "'"
+  ];
+
+
+        function check(x) {
+          var a_cnt = 0;
+          let Check = x;
+          for (let i=0; i<Check.length; i++) {
+            var a_check = Check[i];
+            if (a_check === "@") {
+              a_cnt++
+            }
+          }
+          for (let i = 0; i < Check.length; i++){
+              for ( let j = 0; j < invalidCharacters.length; j++){
+                  if (Check[i] === invalidCharacters[j] || (a_cnt === 0 || a_cnt > 1)) {
+                      return 0;
+                  }
+              }
+          }
+          return 1;
+        }
+        var email = document.getElementById("email_input");
+        email.addEventListener('input', function func() {
+            let EmailCheck = email.value;
+            if (EmailCheck != "") {
+                
+                if (check(EmailCheck)) {
+                    email.classList.add("valid");
+                    email.classList.remove("invalid");
+                } else {
+                    email.classList.add("invalid");
+                    email.classList.remove("valid");
+                }
+
+            } else {
+                email.classList.remove("valid");
+                email.classList.remove("invalid");
+            }
+        });  
+
+
+
         function change_class(id) {
             if (id === "back_box") {
                 var back = document.getElementById("back_box");

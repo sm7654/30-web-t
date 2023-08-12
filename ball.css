@@ -1218,7 +1218,7 @@ box-shadow: none;
         width: calc(100%/3);
         display: flex;
         pointer-events: all;
-        padding: 10px 0px;
+        padding: 10px 0px
     }
     .login_cart_wraper_res {
         width: calc(100%/3);

@@ -132,7 +132,7 @@ header {
     top: 0;
     left: 0;
     background: transparent;
-    z-index: 99;
+    z-index: 9999;
     transition: all 0.35s ease-in-out;
 }
 .white_back {
@@ -384,6 +384,7 @@ nav {
     background-position: center center;
     color: white;
     top: auto;
+    top: 0;
 }
 .banner::before {
     content: '';

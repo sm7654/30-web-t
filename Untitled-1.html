@@ -33,13 +33,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: whitesmoke;
+            box-shadow: 1px 0px 10px #ededed;
         }
         .box {
             width: 550px;
             border: 1px solid white;
             position: absolute;
-            transition: all 0.2s;
+            transition: all 0.25s ease-in-out;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -100,22 +100,31 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
-        .login-button {
-            background-color: #0c1524;
-            color: white;
-            border: 2px solid #0c1524;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .forgot {
+          text-align: left;
+          margin-bottom: 10px;
         }
+        .forgot > a {
+            font-size: 12px;
+            color: #3498db;
+            cursor: pointer;
+          }
 
-        .login-button:hover {
-            background-color: white;
-            color: #0c1524;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
+        .button {
+          background-color: #3498db;
+          color: white;
+          border: 2px solid #0c1524;
+          border: none;
+          border-radius: 6px;
+          width: 100%;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .button:hover {
+          background-color: white;
+          color: #0c1524;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
         }
         .register-card {
             border-radius: 10px;
@@ -148,22 +157,6 @@
             border-radius: 5px;
             margin-bottom: 10px;
           }
-          .register-button {
-              background-color: #0c1524;
-              color: white;
-              border: 2px solid #0c1524;
-              border: none;
-              border-radius: 5px;
-              padding: 10px 20px;
-              cursor: pointer;
-              transition: background-color 0.3s ease;
-          }
-
-          .register-button:hover {
-              background-color: white;
-              color: #0c1524;
-              box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
-          }
           .login-option {
             margin-top: 10px;
           }
@@ -182,16 +175,20 @@
             border-radius: 5px;
             padding: 5px 10px;
             cursor: pointer;
-            width: 70%;
-            transition: background-color 0.3s ease;
+            width: 85%;
+            transition: all 0.3s ease;
             box-shadow: rgba(0, 0, 0, 0.105) 0px 5px 5px 0px;
-
           }
         .google-button {
             margin-top: 10px;
         }
           .auth-button:hover {
-            opacity: 0.9;
+            opacity: 1;
+            background-color: #0c1524;
+            color: white;
+          }
+          .auth-button:hover > i {
+            color: white;
           }
           .or {
             width: 100%;
@@ -227,6 +224,7 @@
           }
           .cards_section {
             background: white;
+            box-shadow: none;
           }
         }
         @media only screen and (max-width: 700px){
@@ -310,8 +308,9 @@
                 <i class="fas fa-lock"></i>
                 </div>
                 <input type="password" class="input-field" placeholder="Password" required>
-                <button type="submit" class="register-button">Register</button>
-            </form>
+                <button type="submit" class="register-button button">Register</button>
+              </form>
+              <a href="./Untitled-1.html" style="width: fit-content; display: flex; margin: 0px auto;"><p style="color: #0c1524; font-size: 12px; margin: 0 auto; position: relative; margin-top: 5px; cursor: pointer; width: fit-content; z-index: 6;"  type="button">Already have an account?</p></a>
             </div>
         </div>
         <div class="front_element_style box" id="front_box" onclick="change_class(this.id)">
@@ -328,8 +327,9 @@
                 <div class="input-icon">
                   <i class="fas fa-lock"></i>
                 </div>
-                <input type="password" class="input-field" placeholder="Password" required>
-                <button type="submit" class="login-button">Login</button>
+                <input type="password" style="margin-bottom: 0px;" class="input-field" placeholder="Password" required>
+                <p class="forgot"><a>Forgot your password?</a></p>
+                <button type="submit" class="login-button button">Login</button>
               </form>
 
               <div class="or">
@@ -421,36 +421,31 @@ const invalidCharacters = [
             }
         });  
 
+  function backup() {
+    change_class(1);
+  }
+  function change_class(id) {
+    var back = document.getElementById("back_box");
+    var front = document.getElementById("front_box");
+    console.log(id);
+    if (id === "back_box" || id === 1) {
 
+        // Changes between the classes of the elements
+        front.classList.remove("front_element_style");
+        back.classList.add("front_element_style");
 
-        function change_class(id) {
-            if (id === "back_box") {
-                var back = document.getElementById("back_box");
-                var front = document.getElementById("front_box");
+        back.classList.remove("back_element_style");
+        front.classList.add("back_element_style");
 
+        // Changes between the IDs of the elements
+        var backupFor_back = document.getElementById("back_box").id;
+        back.id = front.id;
+        front.id = backupFor_back;      
+    }
 
-                //changes between the the class of the elements to give those elements different style
-                //
-                //
-                front.classList.remove("front_element_style");
-                back.classList.add("front_element_style");
+    }
 
-                back.classList.remove("back_element_style");
-                front.classList.add("back_element_style");
-                //end***********************************************************
-
-
-                
-                //changes between the id of the elements
-                //because at the begining of the func we get those elements by their id
-                //and once i click the back it become the front and so on.......
-                var backupFor_back = document.getElementById("back_box").id;
-                back.id = front.id;
-                front.id = backupFor_back;
-                //end********************************************
-            }
-
-        }
+        
     </script>
     <script src="https://kit.fontawesome.com/81535ba2d6.js" crossorigin="anonymous"></script>
 </body>

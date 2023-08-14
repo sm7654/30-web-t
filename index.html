@@ -11,6 +11,20 @@
 <body>
 <div class="backdrop"></div>
 
+<section class="banner">
+    <div class="text_banner_section">
+        <h1>
+            Excellence through Premium Products<span style="color: #f45029;">.</span>
+        </h1>
+        <p>
+            Unlock your basketball potential with premium selection of high-performance equipment. <br> <span style="font-weight: 600;">Our high-skill basketballs are now with 25% discount.</span> 
+        </p>
+        <button>
+            Shop now
+        </button>
+    </div>
+</section>
+
     <header id="header">
         <nav>
             <div class="login_cart_wraper_res">
@@ -47,7 +61,7 @@
             
             <button class="bars-wraper" >
                 <div id="bars">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="" class="bi-list" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                   </svg>
                 </div>                
@@ -107,19 +121,7 @@
 
 
 
-    <section class="banner">
-        <div class="text_banner_section">
-            <h1>
-                Excellence through Premium Products<span style="color: #f45029;">.</span>
-            </h1>
-            <p>
-                Unlock your basketball potential with premium selection of high-performance equipment. <br> <span style="font-weight: 600;">Our high-skill basketballs are now with 25% discount.</span> 
-            </p>
-            <button>
-                Shop now
-            </button>
-        </div>
-    </section>
+
 
 
     <div class="reviews_and_text_section">
@@ -714,19 +716,19 @@
             </h1>
         </div>
         <div class="contact_us_form_wraper">
-            <form class="form_contact_us" id="form">
+            <form class="form_contact_us" id="form" action="send_email.php" method="post">
                 <div class="inputs_and_buttons_wraper">
                     <div class="inputs_wraper">
                         <aside class="input_and_title_wraper">
                             <p>Enter your account name</p>
                             <div class="before_input_name" title="Please enter your name">
-                                <input class="input_form" type="text" name="" id="your_name" placeholder="" required>
+                                <input class="input_form" type="text" name="name" id="your_name" placeholder="" required>
                             </div>
                         </aside>
                         <aside class="input_and_title_wraper">
                             <p>Enter your email</p>
                             <div class="before_input_email" title="Invaild email">
-                                <input class="input_form" type="email" name="" id="email" placeholder="" required>
+                                <input class="input_form" type="email" name="email" id="email" placeholder="" required>
                             </div>
                         </aside>
                         <div class="selection">
@@ -758,13 +760,14 @@
                                 </p>
                             </div>
                         </div>
+                        <input type="hidden" id="option_problam" name="problam">
                         <textarea class="text_area_form"></textarea>
 
                     </div>
                     <div class="button_wraper">
-                        <p class="send_button_contact_us">
+                        <button type="submit" class="send_button_contact_us">
                             Send
-                        </p>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -916,6 +919,7 @@
         }
         function OptionSelected(x) {
             button_dropdwon.innerHTML = x.innerHTML;
+            document.getElementById("option_problam").textContent = x.innerHTML;
             dropdown_options();
         }
 

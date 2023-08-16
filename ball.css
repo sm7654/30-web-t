@@ -1130,10 +1130,10 @@ box-shadow: none;
     .red, .blue {
         grid-row: 1/1;
     }
-    .red {
+    .red , .orenge{
         grid-column: 1/6;
     }
-    .blue {
+    .blue , .green{
         grid-column: 6/-1;
     }
 }

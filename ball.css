@@ -262,7 +262,7 @@ nav {
 }
 .cart_section {
     width: 0px;
-    height: calc(100vh - 60px);
+    height: calc(100svh- 60px);
     position: fixed;
     right: 0;
     top: 60px;
@@ -288,7 +288,7 @@ nav {
 }
 .ProsuctInCartSection{
     width: 100%;
-    height: calc(100vh - 161px);
+    height: calc(100svh - 165px);
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -372,7 +372,7 @@ nav {
 }
 .banner {
     width: 100%;
-    height: 100vh; 
+    height: 100svh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -432,124 +432,88 @@ nav {
 }
 .reviews_text_section {
     text-align: center;
-    padding: 20px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
     color: #0c1524;
 }
 .reviews_text_section > h1 {
-    font-size: 35px;
+    font-size: 30px;
     padding: 10px;
-}
-.reviews_text_section > p {
-    font-weight: 500;
-    font-size: 15px;
 }
 .reviews_section {
     width: 100%;
-    height: 350px;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    flex-direction: row-reverse;
 }
-.scroll_down_buttons_reviews{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    gap: 20px;
-    z-index: 33;
-}
-.bii {
-    width: 25px;
-    height: 40px;
-    box-sizing: content-box;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-.bii:nth-child(1) {
-    rotate: -90deg;
-}
-.bii:nth-child(2) {
-    rotate: -90deg;
-}
-.reviews_gallery_wraper {
+.gallery_wraper_grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 100%;
+    height: fit-content;
+    gap: 10px;
     position: relative;
-    display: flex;
-    grid-template-columns: repeat(3, 290px);
-    padding: 20px 0px;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    align-content: space-between;
-    top: 0;
-}
-.view_port {
-    position: absolute;
-    width: 100vw;
-    height: calc(100% - 20px);
-    top: 20px;
-    z-index: 5;
-    background: linear-gradient(to right, #ededed -65%, transparent 50%, #ededed 165%);
-}  
-.card {
-    width: 350px;
-    height: 250px;
-    background: linear-gradient(white, transparent);
-    border-radius: 15px;
-    position: relative;
-    transition: transform 0.4s ease-in-out;
     padding: 15px;
-    transition: all 200ms ease-in-out;
+    padding-bottom: 5px;
 }
-.review-header {
+.card {
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #E5E4E2 inset;
+}
+.username_date_pic {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
-  
-  .review-title {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  .review-rating {
-    color: #ffd700;
-    font-size: 16px;
-  }
-  
-  .star {
-    margin: 5px 3px 5px 0px;
-    color: gold;
-    font-size: 13px;
-  }
-  
-  .review-text {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .review-author {
-    display: flex;
     align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .author-avatar {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .author-name {
     font-size: 12px;
-  }
-
-
+    padding-bottom: 7px;
+    color: grey;
+}
+.img_user {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 12px;
+    color: black;
+}
+.profile_pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+#date {
+    align-self: center;
+}
+.stars_wraper {
+    display: flex;
+    gap: 3px;
+    padding-bottom: 10px;
+}
+.stars_wraper > i {
+    font-size: 15px;
+    color: #FFDF00;
+}
+.blue {
+    grid-row: 1/4;
+    grid-column: 1/4;
+}
+.red {
+    grid-row: 1/4;
+    grid-column: 4/7;
+}
+.yellow {
+    grid-row: 1/4;
+    grid-column: 7/11;
+}
+.green {
+    grid-row: 4/6;
+    grid-column: 7/11;
+}
+.orenge {
+    grid-row: 4/6;
+    grid-column: 1/7;
+}
+.review_text {
+    font-size: 15px;
+}
 
 
 .filter_products {
@@ -1152,18 +1116,56 @@ box-shadow: none;
 .Nike_box::after {
     display: none;
 }
-
-@media only screen and (min-width: 900px) {
-    .responsive_menu {
-        display: none;
-        pointer-events: none;
+@media only screen and (max-width: 900px) {
+    .gallery_wraper_grid {
+        grid-template-rows: repeat(3, 1fr);
     }
-    .ul_header {
-        display: flex;
-        pointer-events: all;
+    .orenge, .green {
+        grid-row: 3/-1;
+    }
+    .yellow {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+    }
+    .red, .blue {
+        grid-row: 1/1;
+    }
+    .red {
+        grid-column: 1/6;
+    }
+    .blue {
+        grid-column: 6/-1;
     }
 }
+@media only screen and (max-width: 550px) {
+    .review_text {
+        font-size: 14px;
+        line-height: 5mm;
+    }
+    .gallery_wraper_grid {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .orenge, .blue, .red, .yellow, .green {
+        grid-column: 1/-1;
+    }
+    .red {
+        grid-row: 1/2;
+    }
+    .blue {
+        grid-row: 2/3;
+    }
+    .green {
+        grid-row: 3/4;
+    }
+    .orenge {
+        grid-row: 4/5;
+    }
+    .yellow {
+        grid-row: 5/6;
+    }
 
+}
 @media only screen and (max-width: 1050px) {
     .banner {
         padding: 10%;

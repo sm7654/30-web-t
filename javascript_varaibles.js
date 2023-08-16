@@ -51,7 +51,7 @@ const invalidCharacters = [
     '"',
     "'"
   ];
-let scroll = 0;
+let scroll = window.innerWidth * 5;
 
 
 
